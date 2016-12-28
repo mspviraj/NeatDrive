@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		52E847871E1355BE004AAABE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E847861E1355BE004AAABE /* AppDelegate.swift */; };
+		52E847891E1355BE004AAABE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E847881E1355BE004AAABE /* ViewController.swift */; };
+		52E8478C1E1355BE004AAABE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E8478A1E1355BE004AAABE /* Main.storyboard */; };
+		52E8478E1E1355BE004AAABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52E8478D1E1355BE004AAABE /* Assets.xcassets */; };
+		52E847911E1355BE004AAABE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E8478F1E1355BE004AAABE /* LaunchScreen.storyboard */; };
+		52E8479C1E1355BE004AAABE /* NeatDriveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E8479B1E1355BE004AAABE /* NeatDriveTests.swift */; };
+		52E847A71E1355BE004AAABE /* NeatDriveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E847A61E1355BE004AAABE /* NeatDriveUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		52E847981E1355BE004AAABE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52E8477B1E1355BE004AAABE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52E847821E1355BE004AAABE;
+			remoteInfo = NeatDrive;
+		};
+		52E847A31E1355BE004AAABE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52E8477B1E1355BE004AAABE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52E847821E1355BE004AAABE;
+			remoteInfo = NeatDrive;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		52E847831E1355BE004AAABE /* NeatDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeatDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52E847861E1355BE004AAABE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		52E847881E1355BE004AAABE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		52E8478B1E1355BE004AAABE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		52E8478D1E1355BE004AAABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52E847901E1355BE004AAABE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		52E847921E1355BE004AAABE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52E847971E1355BE004AAABE /* NeatDriveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeatDriveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52E8479B1E1355BE004AAABE /* NeatDriveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeatDriveTests.swift; sourceTree = "<group>"; };
+		52E8479D1E1355BE004AAABE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52E847A21E1355BE004AAABE /* NeatDriveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeatDriveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52E847A61E1355BE004AAABE /* NeatDriveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeatDriveUITests.swift; sourceTree = "<group>"; };
+		52E847A81E1355BE004AAABE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52E847801E1355BE004AAABE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52E847941E1355BE004AAABE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52E8479F1E1355BE004AAABE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		52E8477A1E1355BE004AAABE = {
+			isa = PBXGroup;
+			children = (
+				52E847851E1355BE004AAABE /* NeatDrive */,
+				52E8479A1E1355BE004AAABE /* NeatDriveTests */,
+				52E847A51E1355BE004AAABE /* NeatDriveUITests */,
+				52E847841E1355BE004AAABE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		52E847841E1355BE004AAABE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52E847831E1355BE004AAABE /* NeatDrive.app */,
+				52E847971E1355BE004AAABE /* NeatDriveTests.xctest */,
+				52E847A21E1355BE004AAABE /* NeatDriveUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52E847851E1355BE004AAABE /* NeatDrive */ = {
+			isa = PBXGroup;
+			children = (
+				52E847861E1355BE004AAABE /* AppDelegate.swift */,
+				52E847881E1355BE004AAABE /* ViewController.swift */,
+				52E8478A1E1355BE004AAABE /* Main.storyboard */,
+				52E8478D1E1355BE004AAABE /* Assets.xcassets */,
+				52E8478F1E1355BE004AAABE /* LaunchScreen.storyboard */,
+				52E847921E1355BE004AAABE /* Info.plist */,
+			);
+			path = NeatDrive;
+			sourceTree = "<group>";
+		};
+		52E8479A1E1355BE004AAABE /* NeatDriveTests */ = {
+			isa = PBXGroup;
+			children = (
+				52E8479B1E1355BE004AAABE /* NeatDriveTests.swift */,
+				52E8479D1E1355BE004AAABE /* Info.plist */,
+			);
+			path = NeatDriveTests;
+			sourceTree = "<group>";
+		};
+		52E847A51E1355BE004AAABE /* NeatDriveUITests */ = {
+			isa = PBXGroup;
+			children = (
+				52E847A61E1355BE004AAABE /* NeatDriveUITests.swift */,
+				52E847A81E1355BE004AAABE /* Info.plist */,
+			);
+			path = NeatDriveUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52E847821E1355BE004AAABE /* NeatDrive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52E847AB1E1355BE004AAABE /* Build configuration list for PBXNativeTarget "NeatDrive" */;
+			buildPhases = (
+				52E8477F1E1355BE004AAABE /* Sources */,
+				52E847801E1355BE004AAABE /* Frameworks */,
+				52E847811E1355BE004AAABE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NeatDrive;
+			productName = NeatDrive;
+			productReference = 52E847831E1355BE004AAABE /* NeatDrive.app */;
+			productType = "com.apple.product-type.application";
+		};
+		52E847961E1355BE004AAABE /* NeatDriveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52E847AE1E1355BE004AAABE /* Build configuration list for PBXNativeTarget "NeatDriveTests" */;
+			buildPhases = (
+				52E847931E1355BE004AAABE /* Sources */,
+				52E847941E1355BE004AAABE /* Frameworks */,
+				52E847951E1355BE004AAABE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52E847991E1355BE004AAABE /* PBXTargetDependency */,
+			);
+			name = NeatDriveTests;
+			productName = NeatDriveTests;
+			productReference = 52E847971E1355BE004AAABE /* NeatDriveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		52E847A11E1355BE004AAABE /* NeatDriveUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52E847B11E1355BE004AAABE /* Build configuration list for PBXNativeTarget "NeatDriveUITests" */;
+			buildPhases = (
+				52E8479E1E1355BE004AAABE /* Sources */,
+				52E8479F1E1355BE004AAABE /* Frameworks */,
+				52E847A01E1355BE004AAABE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52E847A41E1355BE004AAABE /* PBXTargetDependency */,
+			);
+			name = NeatDriveUITests;
+			productName = NeatDriveUITests;
+			productReference = 52E847A21E1355BE004AAABE /* NeatDriveUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52E8477B1E1355BE004AAABE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = Nelson;
+				TargetAttributes = {
+					52E847821E1355BE004AAABE = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = D7S3BX6UT5;
+						ProvisioningStyle = Automatic;
+					};
+					52E847961E1355BE004AAABE = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = D7S3BX6UT5;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 52E847821E1355BE004AAABE;
+					};
+					52E847A11E1355BE004AAABE = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = D7S3BX6UT5;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 52E847821E1355BE004AAABE;
+					};
+				};
+			};
+			buildConfigurationList = 52E8477E1E1355BE004AAABE /* Build configuration list for PBXProject "NeatDrive" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 52E8477A1E1355BE004AAABE;
+			productRefGroup = 52E847841E1355BE004AAABE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52E847821E1355BE004AAABE /* NeatDrive */,
+				52E847961E1355BE004AAABE /* NeatDriveTests */,
+				52E847A11E1355BE004AAABE /* NeatDriveUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52E847811E1355BE004AAABE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52E847911E1355BE004AAABE /* LaunchScreen.storyboard in Resources */,
+				52E8478E1E1355BE004AAABE /* Assets.xcassets in Resources */,
+				52E8478C1E1355BE004AAABE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52E847951E1355BE004AAABE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52E847A01E1355BE004AAABE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52E8477F1E1355BE004AAABE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52E847891E1355BE004AAABE /* ViewController.swift in Sources */,
+				52E847871E1355BE004AAABE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52E847931E1355BE004AAABE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52E8479C1E1355BE004AAABE /* NeatDriveTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52E8479E1E1355BE004AAABE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52E847A71E1355BE004AAABE /* NeatDriveUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		52E847991E1355BE004AAABE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52E847821E1355BE004AAABE /* NeatDrive */;
+			targetProxy = 52E847981E1355BE004AAABE /* PBXContainerItemProxy */;
+		};
+		52E847A41E1355BE004AAABE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52E847821E1355BE004AAABE /* NeatDrive */;
+			targetProxy = 52E847A31E1355BE004AAABE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		52E8478A1E1355BE004AAABE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52E8478B1E1355BE004AAABE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		52E8478F1E1355BE004AAABE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52E847901E1355BE004AAABE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		52E847A91E1355BE004AAABE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52E847AA1E1355BE004AAABE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		52E847AC1E1355BE004AAABE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = D7S3BX6UT5;
+				INFOPLIST_FILE = NeatDrive/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.NeatDrive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		52E847AD1E1355BE004AAABE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = D7S3BX6UT5;
+				INFOPLIST_FILE = NeatDrive/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.NeatDrive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		52E847AF1E1355BE004AAABE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = D7S3BX6UT5;
+				INFOPLIST_FILE = NeatDriveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.NeatDriveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NeatDrive.app/NeatDrive";
+			};
+			name = Debug;
+		};
+		52E847B01E1355BE004AAABE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = D7S3BX6UT5;
+				INFOPLIST_FILE = NeatDriveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.NeatDriveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NeatDrive.app/NeatDrive";
+			};
+			name = Release;
+		};
+		52E847B21E1355BE004AAABE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = D7S3BX6UT5;
+				INFOPLIST_FILE = NeatDriveUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.NeatDriveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = NeatDrive;
+			};
+			name = Debug;
+		};
+		52E847B31E1355BE004AAABE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = D7S3BX6UT5;
+				INFOPLIST_FILE = NeatDriveUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.NeatDriveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = NeatDrive;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52E8477E1E1355BE004AAABE /* Build configuration list for PBXProject "NeatDrive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52E847A91E1355BE004AAABE /* Debug */,
+				52E847AA1E1355BE004AAABE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52E847AB1E1355BE004AAABE /* Build configuration list for PBXNativeTarget "NeatDrive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52E847AC1E1355BE004AAABE /* Debug */,
+				52E847AD1E1355BE004AAABE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		52E847AE1E1355BE004AAABE /* Build configuration list for PBXNativeTarget "NeatDriveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52E847AF1E1355BE004AAABE /* Debug */,
+				52E847B01E1355BE004AAABE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		52E847B11E1355BE004AAABE /* Build configuration list for PBXNativeTarget "NeatDriveUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52E847B21E1355BE004AAABE /* Debug */,
+				52E847B31E1355BE004AAABE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52E8477B1E1355BE004AAABE /* Project object */;
+}
