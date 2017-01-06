@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		264F3B172FF8E4163B62AE42 /* Pods_NeatDriveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3A628776E25F8C6D844FC85 /* Pods_NeatDriveUITests.framework */; };
+		52391D561E1B30FF00D23D94 /* CloudServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52391D551E1B30FF00D23D94 /* CloudServiceViewController.swift */; };
+		52391D591E1B318A00D23D94 /* FileShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52391D581E1B318A00D23D94 /* FileShareViewController.swift */; };
+		52391D5C1E1B31C200D23D94 /* StorageStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52391D5B1E1B31C200D23D94 /* StorageStatusViewController.swift */; };
+		52391D5E1E1B399000D23D94 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52391D5D1E1B399000D23D94 /* MenuItemCell.swift */; };
+		52391D601E1B41A000D23D94 /* CloudItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52391D5F1E1B41A000D23D94 /* CloudItemCell.swift */; };
+		52391D6A1E1B45FA00D23D94 /* CloudFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52391D691E1B45FA00D23D94 /* CloudFileViewController.swift */; };
+		52391D731E1B784800D23D94 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52391D721E1B784800D23D94 /* Utility.swift */; };
+		52391D751E1B973E00D23D94 /* CloudMetadataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52391D741E1B973E00D23D94 /* CloudMetadataCell.swift */; };
+		52DA66871E1BD22E0055F150 /* DropBoxDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA66841E1BD22E0055F150 /* DropBoxDrive.swift */; };
+		52DA66881E1BD22E0055F150 /* GoogleDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA66851E1BD22E0055F150 /* GoogleDrive.swift */; };
+		52DA66891E1BD22E0055F150 /* CloudDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA66861E1BD22E0055F150 /* CloudDrive.swift */; };
+		52DA668B1E1BD2480055F150 /* DownloadQueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA668A1E1BD2480055F150 /* DownloadQueueViewController.swift */; };
+		52DA668D1E1BD2860055F150 /* DownloadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA668C1E1BD2860055F150 /* DownloadCell.swift */; };
+		52E3524F1E1C9D5200115446 /* PasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3524E1E1C9D5200115446 /* PasscodeViewController.swift */; };
+		52E352511E1E1A4300115446 /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E352501E1E1A4300115446 /* EmptySegue.swift */; };
+		52E352531E1E1C4200115446 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E352521E1E1C4200115446 /* ContainerViewController.swift */; };
 		52E847871E1355BE004AAABE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E847861E1355BE004AAABE /* AppDelegate.swift */; };
 		52E847891E1355BE004AAABE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E847881E1355BE004AAABE /* ViewController.swift */; };
 		52E8478C1E1355BE004AAABE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E8478A1E1355BE004AAABE /* Main.storyboard */; };
@@ -14,6 +31,11 @@
 		52E847911E1355BE004AAABE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E8478F1E1355BE004AAABE /* LaunchScreen.storyboard */; };
 		52E8479C1E1355BE004AAABE /* NeatDriveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E8479B1E1355BE004AAABE /* NeatDriveTests.swift */; };
 		52E847A71E1355BE004AAABE /* NeatDriveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E847A61E1355BE004AAABE /* NeatDriveUITests.swift */; };
+		52E847B51E160918004AAABE /* LocalFilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E847B41E160918004AAABE /* LocalFilesViewController.swift */; };
+		52E847B71E160994004AAABE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E847B61E160994004AAABE /* MenuViewController.swift */; };
+		52E847B91E160BD0004AAABE /* SlidableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E847B81E160BD0004AAABE /* SlidableViewController.swift */; };
+		BA34B4253663C3D183F49D97 /* Pods_NeatDriveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58225BF61607A29AD9AEAB6 /* Pods_NeatDriveTests.framework */; };
+		F1725A51D4906247ED2BB123 /* Pods_NeatDrive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB43F2A786E699606050156C /* Pods_NeatDrive.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +56,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11A52F3443333FA62D87E14E /* Pods-NeatDriveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeatDriveTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NeatDriveTests/Pods-NeatDriveTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3BD7158A30DD702E6E75DD35 /* Pods-NeatDrive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeatDrive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NeatDrive/Pods-NeatDrive.debug.xcconfig"; sourceTree = "<group>"; };
+		3CF1410B986EABFEE2704EBB /* Pods-NeatDriveUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeatDriveUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NeatDriveUITests/Pods-NeatDriveUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		52391D551E1B30FF00D23D94 /* CloudServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudServiceViewController.swift; sourceTree = "<group>"; };
+		52391D581E1B318A00D23D94 /* FileShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileShareViewController.swift; sourceTree = "<group>"; };
+		52391D5B1E1B31C200D23D94 /* StorageStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageStatusViewController.swift; sourceTree = "<group>"; };
+		52391D5D1E1B399000D23D94 /* MenuItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
+		52391D5F1E1B41A000D23D94 /* CloudItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudItemCell.swift; sourceTree = "<group>"; };
+		52391D691E1B45FA00D23D94 /* CloudFileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudFileViewController.swift; sourceTree = "<group>"; };
+		52391D721E1B784800D23D94 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		52391D741E1B973E00D23D94 /* CloudMetadataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudMetadataCell.swift; sourceTree = "<group>"; };
+		52DA66811E1BA3750055F150 /* NeatDrive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NeatDrive.entitlements; sourceTree = "<group>"; };
+		52DA66841E1BD22E0055F150 /* DropBoxDrive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropBoxDrive.swift; sourceTree = "<group>"; };
+		52DA66851E1BD22E0055F150 /* GoogleDrive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleDrive.swift; sourceTree = "<group>"; };
+		52DA66861E1BD22E0055F150 /* CloudDrive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudDrive.swift; sourceTree = "<group>"; };
+		52DA668A1E1BD2480055F150 /* DownloadQueueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadQueueViewController.swift; sourceTree = "<group>"; };
+		52DA668C1E1BD2860055F150 /* DownloadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadCell.swift; sourceTree = "<group>"; };
+		52E3524E1E1C9D5200115446 /* PasscodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeViewController.swift; sourceTree = "<group>"; };
+		52E352501E1E1A4300115446 /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySegue.swift; sourceTree = "<group>"; };
+		52E352521E1E1C4200115446 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		52E847831E1355BE004AAABE /* NeatDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeatDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E847861E1355BE004AAABE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52E847881E1355BE004AAABE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +89,15 @@
 		52E847A21E1355BE004AAABE /* NeatDriveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeatDriveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E847A61E1355BE004AAABE /* NeatDriveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeatDriveUITests.swift; sourceTree = "<group>"; };
 		52E847A81E1355BE004AAABE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52E847B41E160918004AAABE /* LocalFilesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalFilesViewController.swift; sourceTree = "<group>"; };
+		52E847B61E160994004AAABE /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		52E847B81E160BD0004AAABE /* SlidableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidableViewController.swift; sourceTree = "<group>"; };
+		7CD1335D40345BF32D4230BF /* Pods-NeatDriveTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeatDriveTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NeatDriveTests/Pods-NeatDriveTests.release.xcconfig"; sourceTree = "<group>"; };
+		A3A628776E25F8C6D844FC85 /* Pods_NeatDriveUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeatDriveUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB43F2A786E699606050156C /* Pods_NeatDrive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeatDrive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B58225BF61607A29AD9AEAB6 /* Pods_NeatDriveTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeatDriveTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3CCBE1E1F1C58755B106EC5 /* Pods-NeatDrive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeatDrive.release.xcconfig"; path = "Pods/Target Support Files/Pods-NeatDrive/Pods-NeatDrive.release.xcconfig"; sourceTree = "<group>"; };
+		D0419317DF0405B0A1DE0C49 /* Pods-NeatDriveUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeatDriveUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NeatDriveUITests/Pods-NeatDriveUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1725A51D4906247ED2BB123 /* Pods_NeatDrive.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA34B4253663C3D183F49D97 /* Pods_NeatDriveTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +121,125 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				264F3B172FF8E4163B62AE42 /* Pods_NeatDriveUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0129FDFAEBCE02F6FF157F36 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3BD7158A30DD702E6E75DD35 /* Pods-NeatDrive.debug.xcconfig */,
+				C3CCBE1E1F1C58755B106EC5 /* Pods-NeatDrive.release.xcconfig */,
+				11A52F3443333FA62D87E14E /* Pods-NeatDriveTests.debug.xcconfig */,
+				7CD1335D40345BF32D4230BF /* Pods-NeatDriveTests.release.xcconfig */,
+				3CF1410B986EABFEE2704EBB /* Pods-NeatDriveUITests.debug.xcconfig */,
+				D0419317DF0405B0A1DE0C49 /* Pods-NeatDriveUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		52391D521E1B30AD00D23D94 /* LocalFiles */ = {
+			isa = PBXGroup;
+			children = (
+				52E847B41E160918004AAABE /* LocalFilesViewController.swift */,
+			);
+			name = LocalFiles;
+			sourceTree = "<group>";
+		};
+		52391D531E1B30C400D23D94 /* SlidableView */ = {
+			isa = PBXGroup;
+			children = (
+				52E847B61E160994004AAABE /* MenuViewController.swift */,
+				52E847B81E160BD0004AAABE /* SlidableViewController.swift */,
+				52391D5D1E1B399000D23D94 /* MenuItemCell.swift */,
+			);
+			name = SlidableView;
+			sourceTree = "<group>";
+		};
+		52391D541E1B30E300D23D94 /* CloudService */ = {
+			isa = PBXGroup;
+			children = (
+				52DA66831E1BCFE30055F150 /* DownloadQueue */,
+				52DA66821E1BCFC50055F150 /* CloudFiles */,
+				52391D551E1B30FF00D23D94 /* CloudServiceViewController.swift */,
+				52391D5F1E1B41A000D23D94 /* CloudItemCell.swift */,
+			);
+			name = CloudService;
+			sourceTree = "<group>";
+		};
+		52391D571E1B316B00D23D94 /* FileShare */ = {
+			isa = PBXGroup;
+			children = (
+				52391D581E1B318A00D23D94 /* FileShareViewController.swift */,
+				52E352501E1E1A4300115446 /* EmptySegue.swift */,
+				52E352521E1E1C4200115446 /* ContainerViewController.swift */,
+			);
+			name = FileShare;
+			sourceTree = "<group>";
+		};
+		52391D5A1E1B31AB00D23D94 /* StorageStatus */ = {
+			isa = PBXGroup;
+			children = (
+				52391D5B1E1B31C200D23D94 /* StorageStatusViewController.swift */,
+			);
+			name = StorageStatus;
+			sourceTree = "<group>";
+		};
+		52391D611E1B427100D23D94 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				52391D621E1B427D00D23D94 /* CloudDrive */,
+			);
+			name = ThirdParty;
+			sourceTree = "<group>";
+		};
+		52391D621E1B427D00D23D94 /* CloudDrive */ = {
+			isa = PBXGroup;
+			children = (
+				52DA66841E1BD22E0055F150 /* DropBoxDrive.swift */,
+				52DA66851E1BD22E0055F150 /* GoogleDrive.swift */,
+				52DA66861E1BD22E0055F150 /* CloudDrive.swift */,
+			);
+			name = CloudDrive;
+			sourceTree = "<group>";
+		};
+		52391D711E1B782800D23D94 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				52391D721E1B784800D23D94 /* Utility.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		52DA66821E1BCFC50055F150 /* CloudFiles */ = {
+			isa = PBXGroup;
+			children = (
+				52391D691E1B45FA00D23D94 /* CloudFileViewController.swift */,
+				52391D741E1B973E00D23D94 /* CloudMetadataCell.swift */,
+			);
+			name = CloudFiles;
+			sourceTree = "<group>";
+		};
+		52DA66831E1BCFE30055F150 /* DownloadQueue */ = {
+			isa = PBXGroup;
+			children = (
+				52DA668A1E1BD2480055F150 /* DownloadQueueViewController.swift */,
+				52DA668C1E1BD2860055F150 /* DownloadCell.swift */,
+			);
+			name = DownloadQueue;
+			sourceTree = "<group>";
+		};
+		52E3524D1E1C9D3200115446 /* Passcode */ = {
+			isa = PBXGroup;
+			children = (
+				52E3524E1E1C9D5200115446 /* PasscodeViewController.swift */,
+			);
+			name = Passcode;
+			sourceTree = "<group>";
+		};
 		52E8477A1E1355BE004AAABE = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +247,8 @@
 				52E8479A1E1355BE004AAABE /* NeatDriveTests */,
 				52E847A51E1355BE004AAABE /* NeatDriveUITests */,
 				52E847841E1355BE004AAABE /* Products */,
+				0129FDFAEBCE02F6FF157F36 /* Pods */,
+				FB05ADD102E70A1FB6655F02 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +265,15 @@
 		52E847851E1355BE004AAABE /* NeatDrive */ = {
 			isa = PBXGroup;
 			children = (
+				52DA66811E1BA3750055F150 /* NeatDrive.entitlements */,
+				52391D611E1B427100D23D94 /* ThirdParty */,
+				52391D711E1B782800D23D94 /* Utility */,
+				52391D5A1E1B31AB00D23D94 /* StorageStatus */,
+				52391D571E1B316B00D23D94 /* FileShare */,
+				52E3524D1E1C9D3200115446 /* Passcode */,
+				52391D541E1B30E300D23D94 /* CloudService */,
+				52391D521E1B30AD00D23D94 /* LocalFiles */,
+				52391D531E1B30C400D23D94 /* SlidableView */,
 				52E847861E1355BE004AAABE /* AppDelegate.swift */,
 				52E847881E1355BE004AAABE /* ViewController.swift */,
 				52E8478A1E1355BE004AAABE /* Main.storyboard */,
@@ -125,6 +302,16 @@
 			path = NeatDriveUITests;
 			sourceTree = "<group>";
 		};
+		FB05ADD102E70A1FB6655F02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB43F2A786E699606050156C /* Pods_NeatDrive.framework */,
+				B58225BF61607A29AD9AEAB6 /* Pods_NeatDriveTests.framework */,
+				A3A628776E25F8C6D844FC85 /* Pods_NeatDriveUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +319,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52E847AB1E1355BE004AAABE /* Build configuration list for PBXNativeTarget "NeatDrive" */;
 			buildPhases = (
+				32AD59EEB812B7386066E89C /* [CP] Check Pods Manifest.lock */,
 				52E8477F1E1355BE004AAABE /* Sources */,
 				52E847801E1355BE004AAABE /* Frameworks */,
 				52E847811E1355BE004AAABE /* Resources */,
+				6BB8C4BA825DD04F72FAD162 /* [CP] Embed Pods Frameworks */,
+				22E4BC0AFE5C17A23F00D18A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +339,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52E847AE1E1355BE004AAABE /* Build configuration list for PBXNativeTarget "NeatDriveTests" */;
 			buildPhases = (
+				121857FECEAF713ABAAC3859 /* [CP] Check Pods Manifest.lock */,
 				52E847931E1355BE004AAABE /* Sources */,
 				52E847941E1355BE004AAABE /* Frameworks */,
 				52E847951E1355BE004AAABE /* Resources */,
+				20130190A36A0640142B2D90 /* [CP] Embed Pods Frameworks */,
+				9A068858339E90B8822C578E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +360,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52E847B11E1355BE004AAABE /* Build configuration list for PBXNativeTarget "NeatDriveUITests" */;
 			buildPhases = (
+				16BD03EB6906A55F1406CC02 /* [CP] Check Pods Manifest.lock */,
 				52E8479E1E1355BE004AAABE /* Sources */,
 				52E8479F1E1355BE004AAABE /* Frameworks */,
 				52E847A01E1355BE004AAABE /* Resources */,
+				A09C0316D27FD03C7A8A35DF /* [CP] Embed Pods Frameworks */,
+				B0DA72ECC6974C7C9BEEA76A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,6 +391,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = D7S3BX6UT5;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					52E847961E1355BE004AAABE = {
 						CreatedOnToolsVersion = 8.0;
@@ -257,13 +458,170 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		121857FECEAF713ABAAC3859 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		16BD03EB6906A55F1406CC02 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		20130190A36A0640142B2D90 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NeatDriveTests/Pods-NeatDriveTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		22E4BC0AFE5C17A23F00D18A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NeatDrive/Pods-NeatDrive-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32AD59EEB812B7386066E89C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6BB8C4BA825DD04F72FAD162 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NeatDrive/Pods-NeatDrive-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A068858339E90B8822C578E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NeatDriveTests/Pods-NeatDriveTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A09C0316D27FD03C7A8A35DF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NeatDriveUITests/Pods-NeatDriveUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0DA72ECC6974C7C9BEEA76A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NeatDriveUITests/Pods-NeatDriveUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		52E8477F1E1355BE004AAABE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52391D591E1B318A00D23D94 /* FileShareViewController.swift in Sources */,
+				52E847B51E160918004AAABE /* LocalFilesViewController.swift in Sources */,
+				52391D561E1B30FF00D23D94 /* CloudServiceViewController.swift in Sources */,
+				52391D6A1E1B45FA00D23D94 /* CloudFileViewController.swift in Sources */,
+				52E847B91E160BD0004AAABE /* SlidableViewController.swift in Sources */,
+				52391D731E1B784800D23D94 /* Utility.swift in Sources */,
+				52391D5C1E1B31C200D23D94 /* StorageStatusViewController.swift in Sources */,
 				52E847891E1355BE004AAABE /* ViewController.swift in Sources */,
+				52391D5E1E1B399000D23D94 /* MenuItemCell.swift in Sources */,
+				52DA668B1E1BD2480055F150 /* DownloadQueueViewController.swift in Sources */,
+				52DA66881E1BD22E0055F150 /* GoogleDrive.swift in Sources */,
+				52DA66871E1BD22E0055F150 /* DropBoxDrive.swift in Sources */,
+				52391D751E1B973E00D23D94 /* CloudMetadataCell.swift in Sources */,
+				52E3524F1E1C9D5200115446 /* PasscodeViewController.swift in Sources */,
+				52DA66891E1BD22E0055F150 /* CloudDrive.swift in Sources */,
 				52E847871E1355BE004AAABE /* AppDelegate.swift in Sources */,
+				52E352531E1E1C4200115446 /* ContainerViewController.swift in Sources */,
+				52391D601E1B41A000D23D94 /* CloudItemCell.swift in Sources */,
+				52E352511E1E1A4300115446 /* EmptySegue.swift in Sources */,
+				52E847B71E160994004AAABE /* MenuViewController.swift in Sources */,
+				52DA668D1E1BD2860055F150 /* DownloadCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,32 +771,39 @@
 		};
 		52E847AC1E1355BE004AAABE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BD7158A30DD702E6E75DD35 /* Pods-NeatDrive.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NeatDrive/NeatDrive.entitlements;
 				DEVELOPMENT_TEAM = D7S3BX6UT5;
 				INFOPLIST_FILE = NeatDrive/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NeatDrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		52E847AD1E1355BE004AAABE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3CCBE1E1F1C58755B106EC5 /* Pods-NeatDrive.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NeatDrive/NeatDrive.entitlements;
 				DEVELOPMENT_TEAM = D7S3BX6UT5;
 				INFOPLIST_FILE = NeatDrive/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NeatDrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		52E847AF1E1355BE004AAABE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11A52F3443333FA62D87E14E /* Pods-NeatDriveTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -454,6 +819,7 @@
 		};
 		52E847B01E1355BE004AAABE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CD1335D40345BF32D4230BF /* Pods-NeatDriveTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -469,6 +835,7 @@
 		};
 		52E847B21E1355BE004AAABE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CF1410B986EABFEE2704EBB /* Pods-NeatDriveUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = D7S3BX6UT5;
@@ -483,6 +850,7 @@
 		};
 		52E847B31E1355BE004AAABE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0419317DF0405B0A1DE0C49 /* Pods-NeatDriveUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = D7S3BX6UT5;
@@ -514,6 +882,7 @@
 				52E847AD1E1355BE004AAABE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		52E847AE1E1355BE004AAABE /* Build configuration list for PBXNativeTarget "NeatDriveTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +891,7 @@
 				52E847B01E1355BE004AAABE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		52E847B11E1355BE004AAABE /* Build configuration list for PBXNativeTarget "NeatDriveUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +900,7 @@
 				52E847B31E1355BE004AAABE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

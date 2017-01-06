@@ -41,5 +41,26 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>dbapi-8-emm</string>
+		<string>dbapi-2</string>
+	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>db-e1acqhgupugq70w</string>
+				<string>com.googleusercontent.apps.690523511654-ou7s405dvb3m7sfep59co5cmb9afdaub</string>
+			</array>
+			<key>CFBundleURLName</key>
+			<string></string>
+		</dict>
+	</array>
+	<key>DropBoxAppKey</key>
+	<string>e1acqhgupugq70w</string>
+	<key>GoogleClientID</key>
+	<string>690523511654-ou7s405dvb3m7sfep59co5cmb9afdaub</string>
 </dict>
 </plist>
