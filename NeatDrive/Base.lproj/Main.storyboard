@@ -328,7 +328,7 @@
             <objects>
                 <navigationController storyboardIdentifier="LocalFilesNavVC" automaticallyAdjustsScrollViewInsets="NO" id="dU1-6R-aQI" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qcz-NQ-J6K">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Qcz-NQ-J6K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -346,7 +346,7 @@
             <objects>
                 <navigationController storyboardIdentifier="CloudServiceNavVC" automaticallyAdjustsScrollViewInsets="NO" id="VzC-vU-PjK" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8lB-KK-7aq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="8lB-KK-7aq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -423,7 +423,7 @@
             <objects>
                 <navigationController storyboardIdentifier="FileShareNavVC" automaticallyAdjustsScrollViewInsets="NO" id="4JC-zK-AAL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TEm-Ry-OGx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="TEm-Ry-OGx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -566,13 +566,13 @@
                         <viewControllerLayoutGuide type="bottom" id="V99-ld-21o"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2Fg-9i-nR0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="536.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <segue destination="tKP-dO-oYq" kind="custom" identifier="Bluetooth" customClass="EmptySegue" customModule="NeatDrive" customModuleProvider="target" id="hUy-Ni-oqd"/>
-                        <segue destination="47C-eN-aae" kind="custom" identifier="Wifi" customClass="EmptySegue" customModule="NeatDrive" customModuleProvider="target" id="qJh-we-vom"/>
+                        <segue destination="qYJ-Rz-YLo" kind="custom" identifier="Wifi" customClass="EmptySegue" customModule="NeatDrive" customModuleProvider="target" id="7yn-bv-4XJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qbo-PL-5r2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -606,39 +606,148 @@
             </objects>
             <point key="canvasLocation" x="3826" y="-137"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="UcK-0G-t1f">
+        <!--Wifi View Controller-->
+        <scene sceneID="NTm-BB-y5p">
             <objects>
-                <viewController id="47C-eN-aae" sceneMemberID="viewController">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="qYJ-Rz-YLo" customClass="WifiViewController" customModule="NeatDrive" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dk0-C6-OW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3825" y="576"/>
+        </scene>
+        <!--Wifi First Slide-->
+        <scene sceneID="omO-ES-cIR">
+            <objects>
+                <viewController storyboardIdentifier="WifiFirstSlide" id="j03-Ou-gbv" customClass="WifiFirstSlide" customModule="NeatDrive" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Beh-gI-gcm"/>
-                        <viewControllerLayoutGuide type="bottom" id="MlA-fg-qas"/>
+                        <viewControllerLayoutGuide type="top" id="Fs2-hU-mgn"/>
+                        <viewControllerLayoutGuide type="bottom" id="qBJ-wI-AVG"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="JU3-bd-HCE">
+                    <view key="view" contentMode="scaleToFill" id="f15-Dq-f4D">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="wifi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyX-au-9uk">
-                                <frame key="frameInset" minX="166" minY="275" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fed-Ty-nYz">
+                                <state key="normal" title="Previous"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9o-88-Tps">
+                                <state key="normal" title="Next"/>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="of6-SN-FEo"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wifi share on" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZK-Ys-zhX">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Turn on WIFI to show address here " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i5B-gh-E0B">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fed-Ty-nYz" firstAttribute="leading" secondItem="f15-Dq-f4D" secondAttribute="leadingMargin" id="3vy-nv-NUm"/>
+                            <constraint firstItem="v9o-88-Tps" firstAttribute="trailing" secondItem="f15-Dq-f4D" secondAttribute="trailingMargin" id="B9s-f6-NXx"/>
+                            <constraint firstItem="qBJ-wI-AVG" firstAttribute="top" secondItem="fed-Ty-nYz" secondAttribute="bottom" constant="8" id="M1J-1d-i78"/>
+                            <constraint firstItem="of6-SN-FEo" firstAttribute="bottom" secondItem="fed-Ty-nYz" secondAttribute="top" id="MFV-JW-Wgp"/>
+                            <constraint firstItem="qBJ-wI-AVG" firstAttribute="top" secondItem="v9o-88-Tps" secondAttribute="bottom" constant="8" id="MY3-Gq-gln"/>
+                            <constraint firstItem="rZK-Ys-zhX" firstAttribute="top" secondItem="i5B-gh-E0B" secondAttribute="bottom" constant="8" id="RwD-r4-kYf"/>
+                            <constraint firstItem="of6-SN-FEo" firstAttribute="top" secondItem="rZK-Ys-zhX" secondAttribute="bottom" constant="8" id="S9T-tp-OdK"/>
+                            <constraint firstItem="of6-SN-FEo" firstAttribute="centerX" secondItem="f15-Dq-f4D" secondAttribute="centerX" id="XsT-7q-ZLW"/>
+                            <constraint firstItem="rZK-Ys-zhX" firstAttribute="centerX" secondItem="of6-SN-FEo" secondAttribute="centerX" id="ZEo-vG-nfh"/>
+                            <constraint firstItem="i5B-gh-E0B" firstAttribute="centerX" secondItem="of6-SN-FEo" secondAttribute="centerX" id="nIR-6M-nES"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addressTextField" destination="i5B-gh-E0B" id="U45-v2-mrC"/>
+                        <outlet property="nextButton" destination="v9o-88-Tps" id="JZL-Yb-KzP"/>
+                        <outlet property="prviousButton" destination="fed-Ty-nYz" id="7De-ij-p6U"/>
+                        <outlet property="switcher" destination="of6-SN-FEo" id="dru-1a-zOr"/>
+                        <outlet property="wifiStatusLabel" destination="rZK-Ys-zhX" id="ep2-b7-Gx4"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ahe-78-X2Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h5L-2L-cFX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3826" y="567"/>
+            <point key="canvasLocation" x="4591" y="587"/>
+        </scene>
+        <!--Wifi Second Slide-->
+        <scene sceneID="OL6-vt-cor">
+            <objects>
+                <viewController storyboardIdentifier="WifiSecondSlide" id="uqe-Ua-biN" customClass="WifiSecondSlide" customModule="NeatDrive" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="61o-Uq-FPL"/>
+                        <viewControllerLayoutGuide type="bottom" id="TwQ-QV-z3P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aw7-jA-GWX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2g-fc-Zev">
+                                <state key="normal" title="Previous"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pV-OO-Uy2">
+                                <state key="normal" title="Next"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TwQ-QV-z3P" firstAttribute="top" secondItem="3pV-OO-Uy2" secondAttribute="bottom" constant="8" id="GEx-aY-RJ9"/>
+                            <constraint firstItem="3pV-OO-Uy2" firstAttribute="trailing" secondItem="aw7-jA-GWX" secondAttribute="trailingMargin" id="GT9-f9-Gbc"/>
+                            <constraint firstItem="H2g-fc-Zev" firstAttribute="leading" secondItem="aw7-jA-GWX" secondAttribute="leadingMargin" id="jaE-5m-aUy"/>
+                            <constraint firstItem="TwQ-QV-z3P" firstAttribute="top" secondItem="H2g-fc-Zev" secondAttribute="bottom" constant="8" id="t9t-jO-H6U"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nextButton" destination="3pV-OO-Uy2" id="2u8-FZ-xIk"/>
+                        <outlet property="prviousButton" destination="H2g-fc-Zev" id="15b-PH-CwV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FjY-9J-SNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5327" y="587"/>
+        </scene>
+        <!--Wifi Third Slide-->
+        <scene sceneID="QON-g6-H5s">
+            <objects>
+                <viewController storyboardIdentifier="WifiThirdSlide" id="aM7-wY-73a" customClass="WifiThirdSlide" customModule="NeatDrive" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lPe-KW-BB4"/>
+                        <viewControllerLayoutGuide type="bottom" id="QDO-IX-FU0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vyc-tU-Vv7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4d-5x-8zV">
+                                <state key="normal" title="Previous"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nY-RB-wiT">
+                                <state key="normal" title="Next"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QDO-IX-FU0" firstAttribute="top" secondItem="O4d-5x-8zV" secondAttribute="bottom" constant="8" id="B3z-vS-SLR"/>
+                            <constraint firstItem="QDO-IX-FU0" firstAttribute="top" secondItem="4nY-RB-wiT" secondAttribute="bottom" constant="8" id="FXb-fA-fy0"/>
+                            <constraint firstItem="O4d-5x-8zV" firstAttribute="leading" secondItem="Vyc-tU-Vv7" secondAttribute="leadingMargin" id="UZA-pT-GvK"/>
+                            <constraint firstItem="4nY-RB-wiT" firstAttribute="trailing" secondItem="Vyc-tU-Vv7" secondAttribute="trailingMargin" id="own-RQ-zcg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nextButton" destination="4nY-RB-wiT" id="VhH-qp-mCs"/>
+                        <outlet property="prviousButton" destination="O4d-5x-8zV" id="4n9-EU-WNF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XNN-tz-l3H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6038" y="591"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9D0-z1-cp1">
             <objects>
                 <navigationController storyboardIdentifier="StorageStatusNavVC" automaticallyAdjustsScrollViewInsets="NO" id="OJZ-db-YAf" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8fq-q6-SRt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="8fq-q6-SRt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -693,7 +802,7 @@
             <objects>
                 <navigationController storyboardIdentifier="PasscodeNavVC" automaticallyAdjustsScrollViewInsets="NO" id="e7w-oi-9Bl" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ups-2B-6bt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ups-2B-6bt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

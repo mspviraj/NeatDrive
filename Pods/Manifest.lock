@@ -3,6 +3,9 @@ PODS:
   - AppAuth (0.7.1)
   - BetterSegmentedControl (0.5)
   - ECSlidingViewController (2.0.3)
+  - GCDWebServer/Core (3.0)
+  - GCDWebServer/WebUploader (3.0):
+    - GCDWebServer/Core
   - GoogleAPIClient/Core (1.0.5):
     - GTMSessionFetcher (~> 1.1)
   - GoogleAPIClient/Drive (1.0.5):
@@ -26,6 +29,7 @@ PODS:
 DEPENDENCIES:
   - BetterSegmentedControl
   - ECSlidingViewController
+  - GCDWebServer/WebUploader (= 3.0)
   - GoogleAPIClient/Drive (~> 1.0.2)
   - GTMAppAuth
   - GTMOAuth2 (~> 1.1.0)
@@ -38,6 +42,7 @@ SPEC CHECKSUMS:
   AppAuth: c56d352b0d50bb34dbb302d7ba50b20aa6b6ae89
   BetterSegmentedControl: db74c56602e418e9eca8f6340e0ed0a7215f5f7c
   ECSlidingViewController: 6485c14f23b4487e9946535421ca8f111f86cc53
+  GCDWebServer: 6b414efadd88124f40170513afac08e94e9a9f56
   GoogleAPIClient: 4a6b0b807de8b1115a2835180b25dd93dc60f1ea
   GTMAppAuth: 4b7bdc1fefdf6a49f3d9fc1aa6123f0c7e9b6660
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
@@ -46,6 +51,6 @@ SPEC CHECKSUMS:
   SwiftyDropbox: dfcd4d308d32d74729255b48833db61acdfb9c23
   UICircularProgressRing: 892adf48ea0bdc218057c4e62c5e3a8609bd5b1c
 
-PODFILE CHECKSUM: 2c12006e50037f0f5d7025812244399684a3dd7a
+PODFILE CHECKSUM: 8e1ee2f9250f4045faede1fda650610cb7e533e6
 
 COCOAPODS: 1.1.0.rc.3

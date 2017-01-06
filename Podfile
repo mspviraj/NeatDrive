@@ -17,6 +17,8 @@ target 'NeatDrive' do
   pod 'LTHPasscodeViewController'
   
   pod 'BetterSegmentedControl'
+  
+  pod 'GCDWebServer/WebUploader', '3.0'
 
   # Pods for NeatDrive
 
