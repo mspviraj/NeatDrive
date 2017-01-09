@@ -15,5 +15,10 @@ class LocalFilesViewController : SlidableViewController{
         super.viewDidLoad()
         
         self.title = "All Files"
+        
+        LocalFileManager.shareInstance.getContentsWithMetadata(metadata: nil) { result in
+            
+            print(result)
+        }
     }
 }

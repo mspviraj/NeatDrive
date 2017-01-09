@@ -31,6 +31,8 @@
 		52E3525E1E1F37B800115446 /* WifiThirdSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3525D1E1F37B800115446 /* WifiThirdSlide.swift */; };
 		52E352601E1F487000115446 /* GCDWebUploader.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 52E3525F1E1F487000115446 /* GCDWebUploader.bundle */; };
 		52E352671E1F4CE300115446 /* HttpFileTransferManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E352661E1F4CE300115446 /* HttpFileTransferManager.swift */; };
+		52E55C7A1E235142007C6EDF /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E55C791E235142007C6EDF /* LocalFileManager.swift */; };
+		52E55C7C1E236B5E007C6EDF /* LocalFileMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E55C7B1E236B5E007C6EDF /* LocalFileMetadata.swift */; };
 		52E847871E1355BE004AAABE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E847861E1355BE004AAABE /* AppDelegate.swift */; };
 		52E847891E1355BE004AAABE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E847881E1355BE004AAABE /* ViewController.swift */; };
 		52E8478C1E1355BE004AAABE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E8478A1E1355BE004AAABE /* Main.storyboard */; };
@@ -90,6 +92,8 @@
 		52E3525D1E1F37B800115446 /* WifiThirdSlide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WifiThirdSlide.swift; sourceTree = "<group>"; };
 		52E3525F1E1F487000115446 /* GCDWebUploader.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GCDWebUploader.bundle; sourceTree = "<group>"; };
 		52E352661E1F4CE300115446 /* HttpFileTransferManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpFileTransferManager.swift; sourceTree = "<group>"; };
+		52E55C791E235142007C6EDF /* LocalFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
+		52E55C7B1E236B5E007C6EDF /* LocalFileMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalFileMetadata.swift; sourceTree = "<group>"; };
 		52E847831E1355BE004AAABE /* NeatDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeatDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E847861E1355BE004AAABE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52E847881E1355BE004AAABE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 		52391D611E1B427100D23D94 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				52E55C781E235124007C6EDF /* LocalFileManager */,
 				52E352611E1F4A3000115446 /* HttpServer */,
 				52391D621E1B427D00D23D94 /* CloudDrive */,
 			);
@@ -274,6 +279,15 @@
 				52E352661E1F4CE300115446 /* HttpFileTransferManager.swift */,
 			);
 			name = HttpServer;
+			sourceTree = "<group>";
+		};
+		52E55C781E235124007C6EDF /* LocalFileManager */ = {
+			isa = PBXGroup;
+			children = (
+				52E55C791E235142007C6EDF /* LocalFileManager.swift */,
+				52E55C7B1E236B5E007C6EDF /* LocalFileMetadata.swift */,
+			);
+			name = LocalFileManager;
 			sourceTree = "<group>";
 		};
 		52E8477A1E1355BE004AAABE = {
@@ -666,6 +680,8 @@
 				52E352511E1E1A4300115446 /* EmptySegue.swift in Sources */,
 				52E847B71E160994004AAABE /* MenuViewController.swift in Sources */,
 				52DA668D1E1BD2860055F150 /* DownloadCell.swift in Sources */,
+				52E55C7C1E236B5E007C6EDF /* LocalFileMetadata.swift in Sources */,
+				52E55C7A1E235142007C6EDF /* LocalFileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
