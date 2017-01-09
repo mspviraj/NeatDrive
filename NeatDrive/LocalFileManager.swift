@@ -23,18 +23,19 @@ class LocalFileManager : NSObject{
         
         didSet{
             
-            
-            
-            if let handler = self.onCurrentPathChanged{
+            DispatchQueue.main.async {
                 
-                var isRoot = true
-                
-                if currentPath != self.rootDirectory{
+                if let handler = self.onCurrentPathChanged{
                     
-                    isRoot = false
+                    var isRoot = true
+                    
+                    if self.currentPath != self.rootDirectory{
+                        
+                        isRoot = false
+                    }
+                    
+                    handler(isRoot)
                 }
-                
-                handler(isRoot)
             }
             
         }
@@ -77,17 +78,20 @@ class LocalFileManager : NSObject{
     }
     
     /**
-     Get list of contents under metadata(folder) or give nil for contents under root
+     Get list of contents under path or give nil for contents under root
     */
-    func getContentsWithMetadata(metadata:LocalFileMetadata?, complete:([LocalFileMetadata]?)->()){
+    func contentsInPath(path:String?, complete:@escaping ([LocalFileMetadata])->()){
         
         var newPath = self.currentPath
         
-        if metadata != nil{
+        if path != nil{
             
-            assert(metadata?.IsFolder != true, "Given file not folder")
+            var isDirectory : ObjCBool = false
+            FileManager.default.fileExists(atPath: path!, isDirectory: &isDirectory)
             
-            newPath = (self.currentPath as NSString).appendingPathComponent((metadata?.FileName)!)
+            assert(isDirectory.boolValue == true, "given path is file not folder")
+            
+            newPath = path!
         }
         else {
             
@@ -96,42 +100,62 @@ class LocalFileManager : NSObject{
         
         let newPathURL = URL(fileURLWithPath: newPath)
         
-        do{
+        //run in background
+        DispatchQueue.global(qos: .background).async {
             
-            let contentURLs = try FileManager.default.contentsOfDirectory(at: newPathURL, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
-            
-            var content : [LocalFileMetadata] = Array<LocalFileMetadata>()
-            
-            for url in contentURLs{
+            do{
                 
-                //is file or folder
-                var isDirectory : ObjCBool = false
-                FileManager.default.fileExists(atPath: url.path, isDirectory: &isDirectory)
+                let contentURLs = try FileManager.default.contentsOfDirectory(at: newPathURL, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
                 
-                //file attribute
-                let fileAttr : NSDictionary = try FileManager.default.attributesOfItem(atPath: url.path) as NSDictionary
+                var content : [LocalFileMetadata] = Array<LocalFileMetadata>()
                 
-                
-                var fileSize : UInt64 = 0
-                let createDate : Date? = fileAttr.fileCreationDate()
-                let modifyDate : Date? = fileAttr.fileModificationDate()
-                let fileName : String = (url.path as NSString).lastPathComponent
-                
-                if !isDirectory.boolValue{
+                for url in contentURLs{
                     
-                    fileSize = fileAttr.fileSize()
+                    //is file or folder
+                    var isDirectory : ObjCBool = false
+                    FileManager.default.fileExists(atPath: url.path, isDirectory: &isDirectory)
+                    
+                    //file attribute
+                    let fileAttr : NSDictionary = try FileManager.default.attributesOfItem(atPath: url.path) as NSDictionary
+                    
+                    
+                    var fileSize : UInt64 = 0
+                    let createDate : Date? = fileAttr.fileCreationDate()
+                    let modifyDate : Date? = fileAttr.fileModificationDate()
+                    let fileName : String = (url.path as NSString).lastPathComponent
+                    
+                    if !isDirectory.boolValue{
+                        
+                        fileSize = fileAttr.fileSize()
+                    }
+                    
+                    content.append(LocalFileMetadata(_fileURL: url, _fileSize: fileSize, _createDate: createDate, _modifyDate: modifyDate, _filename: fileName, _isFolder: isDirectory.boolValue))
                 }
                 
-                content.append(LocalFileMetadata(_fileURL: url, _fileSize: fileSize, _createDate: createDate, _modifyDate: modifyDate, _filename: fileName, _isFolder: isDirectory.boolValue))
+                self.currentPath = newPath
+                
+                //back to main thread
+                DispatchQueue.main.async {
+                    
+                    complete(content)
+                }
             }
-            
-            self.currentPath = newPath
-            
-            complete(content)
+            catch {
+                
+                assertionFailure("fail to get contents")
+            }
         }
-        catch {
+    }
+    
+    func backToParent(complete:@escaping ([LocalFileMetadata])->()){
+        
+        if self.currentPath == self.rootDirectory{
             
-            assertionFailure("fail to get contents")
+            self.contentsInPath(path: nil, complete: complete)
+        }
+        else {
+            
+            self.contentsInPath(path: (self.currentPath as NSString).deletingLastPathComponent, complete: complete)
         }
     }
 }
