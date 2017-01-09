@@ -87,8 +87,10 @@ class LocalFileManager : NSObject{
         if path != nil{
             
             var isDirectory : ObjCBool = false
-            FileManager.default.fileExists(atPath: path!, isDirectory: &isDirectory)
+            let fileExist = FileManager.default.fileExists(atPath: path!, isDirectory: &isDirectory)
             
+            
+            assert(fileExist == true, "folder path \(path) does not exist")
             assert(isDirectory.boolValue == true, "given path is file not folder")
             
             newPath = path!
