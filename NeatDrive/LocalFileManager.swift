@@ -450,7 +450,7 @@ class LocalFileManager : NSObject{
     /**
      Search file or folder by keyword
      
-     deepSearch: true will recursive search file and folder under given path, otherwise false it will perform shallow seach 
+     deepSearch: true will recursive search file and folder under given path, otherwise false it will perform shallow seach
     */
     func searchFile(path:String, keyword:String, deepSearch:Bool, complete:@escaping ([LocalFileMetadata])->()){
         

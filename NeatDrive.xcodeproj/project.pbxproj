@@ -22,6 +22,10 @@
 		52DA66891E1BD22E0055F150 /* CloudDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA66861E1BD22E0055F150 /* CloudDrive.swift */; };
 		52DA668B1E1BD2480055F150 /* DownloadQueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA668A1E1BD2480055F150 /* DownloadQueueViewController.swift */; };
 		52DA668D1E1BD2860055F150 /* DownloadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA668C1E1BD2860055F150 /* DownloadCell.swift */; };
+		52E0556B1E24FCFC006E2C35 /* ACPItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E055671E24FCFC006E2C35 /* ACPItem.m */; };
+		52E0556C1E24FCFC006E2C35 /* ACPItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52E055681E24FCFC006E2C35 /* ACPItem.xib */; };
+		52E0556D1E24FCFC006E2C35 /* ACPScrollMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E0556A1E24FCFC006E2C35 /* ACPScrollMenu.m */; };
+		52E0556F1E24FD19006E2C35 /* ACPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E0556E1E24FD19006E2C35 /* ACPViewController.swift */; };
 		52E3524F1E1C9D5200115446 /* PasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E3524E1E1C9D5200115446 /* PasscodeViewController.swift */; };
 		52E352511E1E1A4300115446 /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E352501E1E1A4300115446 /* EmptySegue.swift */; };
 		52E352531E1E1C4200115446 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E352521E1E1C4200115446 /* ContainerViewController.swift */; };
@@ -84,6 +88,13 @@
 		52DA66861E1BD22E0055F150 /* CloudDrive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudDrive.swift; sourceTree = "<group>"; };
 		52DA668A1E1BD2480055F150 /* DownloadQueueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadQueueViewController.swift; sourceTree = "<group>"; };
 		52DA668C1E1BD2860055F150 /* DownloadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadCell.swift; sourceTree = "<group>"; };
+		52E055661E24FCFC006E2C35 /* ACPItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACPItem.h; sourceTree = "<group>"; };
+		52E055671E24FCFC006E2C35 /* ACPItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACPItem.m; sourceTree = "<group>"; };
+		52E055681E24FCFC006E2C35 /* ACPItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ACPItem.xib; sourceTree = "<group>"; };
+		52E055691E24FCFC006E2C35 /* ACPScrollMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACPScrollMenu.h; sourceTree = "<group>"; };
+		52E0556A1E24FCFC006E2C35 /* ACPScrollMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACPScrollMenu.m; sourceTree = "<group>"; };
+		52E0556E1E24FD19006E2C35 /* ACPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACPViewController.swift; sourceTree = "<group>"; };
+		52E055701E2502A8006E2C35 /* ACP_Objc_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACP_Objc_Header.h; sourceTree = "<group>"; };
 		52E3524E1E1C9D5200115446 /* PasscodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeViewController.swift; sourceTree = "<group>"; };
 		52E352501E1E1A4300115446 /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySegue.swift; sourceTree = "<group>"; };
 		52E352521E1E1C4200115446 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
@@ -213,6 +224,7 @@
 		52391D611E1B427100D23D94 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				52E055651E24FCDA006E2C35 /* ACPScrollMenu */,
 				52E55C781E235124007C6EDF /* LocalFileManager */,
 				52E352611E1F4A3000115446 /* HttpServer */,
 				52391D621E1B427D00D23D94 /* CloudDrive */,
@@ -254,6 +266,20 @@
 				52DA668C1E1BD2860055F150 /* DownloadCell.swift */,
 			);
 			name = DownloadQueue;
+			sourceTree = "<group>";
+		};
+		52E055651E24FCDA006E2C35 /* ACPScrollMenu */ = {
+			isa = PBXGroup;
+			children = (
+				52E055661E24FCFC006E2C35 /* ACPItem.h */,
+				52E055671E24FCFC006E2C35 /* ACPItem.m */,
+				52E055681E24FCFC006E2C35 /* ACPItem.xib */,
+				52E055691E24FCFC006E2C35 /* ACPScrollMenu.h */,
+				52E0556A1E24FCFC006E2C35 /* ACPScrollMenu.m */,
+				52E0556E1E24FD19006E2C35 /* ACPViewController.swift */,
+				52E055701E2502A8006E2C35 /* ACP_Objc_Header.h */,
+			);
+			name = ACPScrollMenu;
 			sourceTree = "<group>";
 		};
 		52E3524D1E1C9D3200115446 /* Passcode */ = {
@@ -444,6 +470,7 @@
 					52E847821E1355BE004AAABE = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = D7S3BX6UT5;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -491,6 +518,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52E847911E1355BE004AAABE /* LaunchScreen.storyboard in Resources */,
+				52E0556C1E24FCFC006E2C35 /* ACPItem.xib in Resources */,
 				52E352601E1F487000115446 /* GCDWebUploader.bundle in Resources */,
 				52E8478E1E1355BE004AAABE /* Assets.xcassets in Resources */,
 				52E8478C1E1355BE004AAABE /* Main.storyboard in Resources */,
@@ -658,13 +686,16 @@
 			files = (
 				52E3525E1E1F37B800115446 /* WifiThirdSlide.swift in Sources */,
 				52391D591E1B318A00D23D94 /* FileShareViewController.swift in Sources */,
+				52E0556D1E24FCFC006E2C35 /* ACPScrollMenu.m in Sources */,
 				52E847B51E160918004AAABE /* LocalFilesViewController.swift in Sources */,
 				521B3DB21E237C8A0053EAAE /* FileCell.swift in Sources */,
+				52E0556F1E24FD19006E2C35 /* ACPViewController.swift in Sources */,
 				52E352671E1F4CE300115446 /* HttpFileTransferManager.swift in Sources */,
 				52391D561E1B30FF00D23D94 /* CloudServiceViewController.swift in Sources */,
 				52391D6A1E1B45FA00D23D94 /* CloudFileViewController.swift in Sources */,
 				52E847B91E160BD0004AAABE /* SlidableViewController.swift in Sources */,
 				52391D731E1B784800D23D94 /* Utility.swift in Sources */,
+				52E0556B1E24FCFC006E2C35 /* ACPItem.m in Sources */,
 				52391D5C1E1B31C200D23D94 /* StorageStatusViewController.swift in Sources */,
 				52E3525A1E1F376200115446 /* WifiFirstSlide.swift in Sources */,
 				52E847891E1355BE004AAABE /* ViewController.swift in Sources */,
@@ -838,12 +869,15 @@
 			baseConfigurationReference = 3BD7158A30DD702E6E75DD35 /* Pods-NeatDrive.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NeatDrive/NeatDrive.entitlements;
 				DEVELOPMENT_TEAM = D7S3BX6UT5;
 				INFOPLIST_FILE = NeatDrive/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NeatDrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = NeatDrive/ACP_Objc_Header.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -854,12 +888,14 @@
 			baseConfigurationReference = C3CCBE1E1F1C58755B106EC5 /* Pods-NeatDrive.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NeatDrive/NeatDrive.entitlements;
 				DEVELOPMENT_TEAM = D7S3BX6UT5;
 				INFOPLIST_FILE = NeatDrive/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NeatDrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = NeatDrive/ACP_Objc_Header.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

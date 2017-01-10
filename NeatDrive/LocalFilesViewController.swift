@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LocalFilesViewController : SlidableViewController, UITableViewDataSource, UITableViewDelegate{
+class LocalFilesViewController : SlidableViewController, UITableViewDataSource, UITableViewDelegate, ACPViewControllerDelegate{
     
     @IBOutlet weak var tableView : UITableView?
     
@@ -74,6 +74,7 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
             
             self.atRoot = false
         }
+        
     }
     
     func processData(result:[LocalFileMetadata]){
@@ -122,6 +123,11 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
         }
     }
     
+    @IBAction func onPlusTap(){
+        
+        ACPViewController.showMenu(_delegate:self)
+    }
+    
     //MARK:table data source
     func numberOfSections(in tableView: UITableView) -> Int {
         
@@ -163,7 +169,6 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
             cell?.subtitleLabel?.text = "File size : \(item.FileSizeString)"
         }
         
-        
         return cell!
     }
     
@@ -181,5 +186,48 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
                 self.processData(result: result)
             })
         }
+    }
+    
+    //MARK:ACPViewControllerDataSource
+    func menuItems() -> Array<ACPItem> {
+        
+        let arr : [ACPItem] = [
+        
+            ACPItem(acpItem: nil, iconImage: nil, label: "Add Folder", andAction: { item in
+                
+                print("add folder")
+            }),
+            
+            ACPItem(acpItem: nil, iconImage: nil, label: "Rename", andAction: { item in
+                
+                print("Re-name")
+            }),
+            
+            ACPItem(acpItem: nil, iconImage: nil, label: "Edit", andAction: { item in
+                
+                print("Edit")
+            }),
+            
+            ACPItem(acpItem: nil, iconImage: nil, label: "Edit", andAction: { item in
+                
+                print("Edit")
+            }),
+            
+            ACPItem(acpItem: nil, iconImage: nil, label: "Edit", andAction: { item in
+                
+                print("Edit")
+            }),
+            
+            ACPItem(acpItem: nil, iconImage: nil, label: "Edit", andAction: { item in
+                
+                print("Edit")
+            })
+        ]
+        
+        return arr
+    }
+    
+    func selectItemAtIndex(selectedIndex:Int){
+        
     }
 }

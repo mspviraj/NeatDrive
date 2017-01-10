@@ -153,12 +153,21 @@
                                     <outlet property="delegate" destination="Sc8-TX-c9x" id="n8S-N0-sBx"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v49-bL-cnx">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="onPlusTap" destination="Sc8-TX-c9x" eventType="touchUpInside" id="Mjb-U0-RTS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="v0h-kq-QAp" firstAttribute="top" secondItem="coq-Xx-6Nu" secondAttribute="bottom" id="5fb-FB-GJr"/>
                             <constraint firstAttribute="trailing" secondItem="coq-Xx-6Nu" secondAttribute="trailing" id="Iwq-Wq-40W"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="v49-bL-cnx" secondAttribute="trailing" multiplier="1.1:1" constant="1" id="Q4G-Ad-YIz"/>
                             <constraint firstItem="coq-Xx-6Nu" firstAttribute="top" secondItem="jMg-qE-Tno" secondAttribute="bottom" id="aJW-53-dFI"/>
+                            <constraint firstItem="v0h-kq-QAp" firstAttribute="top" secondItem="v49-bL-cnx" secondAttribute="bottom" multiplier="1.1:1" constant="1" id="e8k-qN-sAF"/>
                             <constraint firstItem="coq-Xx-6Nu" firstAttribute="leading" secondItem="wN2-gm-Skb" secondAttribute="leading" id="vLo-BJ-T2d"/>
                         </constraints>
                     </view>
