@@ -52,6 +52,7 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
         
             self.atRoot = isRoot
         }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
