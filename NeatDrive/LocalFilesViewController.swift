@@ -58,10 +58,12 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        
         LocalFileManager.shareInstance.contentsInPath(path: LocalFileManager.shareInstance.currentPathString, complete: { result in
             
             self.processData(result: result)
         })
+ 
         
         //we refresh back button
         if atRoot{

@@ -88,8 +88,12 @@ class LocalFileManager : NSObject{
     
     /**
      Get list of contents under path or give nil for contents under root
+     
+     deep: true will get all file and folder under this path include subfolder, default is false
+     
+     alterCurrentPath: true current path will be changed after procedure has done, default is true. Recommend not alter this value unless you are using method for seaching file or folder
     */
-    func contentsInPath(path:String?, complete:@escaping ([LocalFileMetadata])->()){
+    func contentsInPath(path:String?, deep:Bool = false, alterCurrentPath:Bool = true, complete:@escaping ([LocalFileMetadata])->()){
         
         var newPath = self.currentPath
         
@@ -115,8 +119,26 @@ class LocalFileManager : NSObject{
         DispatchQueue.global(qos: .background).async {
             
             do{
+                var contentURLs : [URL] = Array<URL>()
                 
-                let contentURLs = try FileManager.default.contentsOfDirectory(at: newPathURL, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
+                if deep{
+                    
+                    if deep{
+                        
+                        let enumerator : FileManager.DirectoryEnumerator = FileManager.default.enumerator(at: newPathURL, includingPropertiesForKeys: nil, options: .skipsHiddenFiles, errorHandler:nil)!
+                        
+                        for case let fileURL as URL in enumerator{
+                            
+                            contentURLs.append(fileURL)
+                        }
+                    }
+                }
+                else{
+                    
+                    contentURLs = try FileManager.default.contentsOfDirectory(at: newPathURL, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
+                }
+                
+                
                 
                 var content : [LocalFileMetadata] = Array<LocalFileMetadata>()
                 
@@ -143,7 +165,11 @@ class LocalFileManager : NSObject{
                     content.append(LocalFileMetadata(_fileURL: url, _fileSize: fileSize, _createDate: createDate, _modifyDate: modifyDate, _filename: fileName, _isFolder: isDirectory.boolValue))
                 }
                 
-                self.currentPath = newPath
+                if alterCurrentPath{
+                    
+                    self.currentPath = newPath
+                }
+                
                 
                 //back to main thread
                 DispatchQueue.main.async {
@@ -418,6 +444,42 @@ class LocalFileManager : NSObject{
                     complete(nil)
                 }
             }
+        }
+    }
+    
+    /**
+     Search file or folder by keyword
+     
+     deepSearch: true will recursive search file and folder under given path, otherwise false it will perform shallow seach 
+    */
+    func searchFile(path:String, keyword:String, deepSearch:Bool, complete:@escaping ([LocalFileMetadata])->()){
+        
+        var isDirectory : ObjCBool = false
+        let validPath = FileManager.default.fileExists(atPath: path, isDirectory: &isDirectory)
+        
+        assert(validPath == true, "path \(path) does not exist")
+        assert(isDirectory.boolValue == true, "given path \(path) is not a directory")
+        
+        DispatchQueue.global(qos: .background).async {
+            
+            self.contentsInPath(path: path, deep:deepSearch, alterCurrentPath: false, complete: { result in
+            
+                var filtedFile : [LocalFileMetadata] = Array<LocalFileMetadata>()
+                
+                for data in result{
+                    
+                    if data.FileName.contains(keyword){
+                        
+                        filtedFile.append(data)
+                    }
+                }
+                
+                DispatchQueue.main.async {
+                    
+                    complete(filtedFile)
+                }
+                
+            })
         }
     }
 }
