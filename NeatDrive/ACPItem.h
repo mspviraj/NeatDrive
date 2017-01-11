@@ -20,6 +20,7 @@
 @interface ACPItem : UIView
 
 typedef void(^actionBlock)(ACPItem *item);
+typedef void(^enableDisableBlock)(ACPItem *item, BOOL enable);
 
 typedef enum {
     
@@ -35,6 +36,8 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UIImageView *bgImage;
 @property (nonatomic, copy) actionBlock block;
 @property (assign, nonatomic) BOOL highlighted;
+@property (nonatomic, copy) enableDisableBlock en_block;
+@property (nonatomic, assign, readonly) BOOL enable;
 
 
 /**
@@ -66,5 +69,8 @@ typedef enum {
  */
 
 - (void)setHighlightedBackground:(UIImage *)backgroundImageHightlighted iconHighlighted:(UIImage *)iconImageHighlighted textColorHighlighted:(UIColor *)texColorHighlighted;
+
+- (ACPItem *)setItemEnable:(BOOL)enable;
+- (ACPItem *)setEnableDisableAction:(enableDisableBlock)block;
 
 @end

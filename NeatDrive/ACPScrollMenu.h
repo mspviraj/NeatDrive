@@ -46,6 +46,7 @@ typedef enum {
 @property (nonatomic, strong) NSArray *menuArray;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, assign) ACPAnimation animationType;
+@property (nonatomic, assign) BOOL fixSizeEnable;
 
 /**
  	Set up the menu programatically, if you are using storyboard, you dont need to use it.

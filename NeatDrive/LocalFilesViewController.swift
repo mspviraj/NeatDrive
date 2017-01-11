@@ -196,6 +196,16 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
             ACPItem(acpItem: nil, iconImage: nil, label: "Add Folder", andAction: { item in
                 
                 print("add folder")
+            }).setItemEnable(false).setEnableDisableAction({ item, enable in
+                
+                if enable {
+                    
+                    item?.labelItem.textColor = UIColor.darkGray
+                }
+                else{
+                    
+                    item?.labelItem.textColor = UIColor.lightGray
+                }
             }),
             
             ACPItem(acpItem: nil, iconImage: nil, label: "Rename", andAction: { item in
@@ -210,17 +220,7 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
             
             ACPItem(acpItem: nil, iconImage: nil, label: "Edit", andAction: { item in
                 
-                print("Edit")
-            }),
-            
-            ACPItem(acpItem: nil, iconImage: nil, label: "Edit", andAction: { item in
-                
-                print("Edit")
-            }),
-            
-            ACPItem(acpItem: nil, iconImage: nil, label: "Edit", andAction: { item in
-                
-                print("Edit")
+                print("Cancel")
             })
         ]
         

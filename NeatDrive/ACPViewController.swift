@@ -52,7 +52,7 @@ class ACPViewController : UIViewController, ACPScrollDelegate{
         self.view.addSubview(button)
         
         
-        self.scrollMenu.backgroundColor = UIColor.black
+        self.scrollMenu.backgroundColor = UIColor.white
         self.scrollMenu.delegate = self
         self.view.addSubview(self.scrollMenu)
     }
@@ -68,6 +68,7 @@ class ACPViewController : UIViewController, ACPScrollDelegate{
         self.scrollMenu.frame = CGRect(x: 0, y: self.view.frame.height - (height+8), width: self.view.frame.width, height: height+8)
         
         self.scrollMenu.isUserInteractionEnabled = true
+        self.scrollMenu.fixSizeEnable = true
         
         if self.delegate != nil{
             

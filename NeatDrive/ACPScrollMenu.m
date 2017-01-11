@@ -55,7 +55,21 @@ static CGFloat const kScrollViewItemMarginWidth = 5.0f;
     
 	// Setting ScrollView
 	_scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    
+    if(_fixSizeEnable){
+        
+        CGFloat scrollViewWidth = _scrollView.bounds.size.width;
+        CGFloat actualWidth = scrollViewWidth - kScrollViewFirstWidth * 2 - (menuItems.count - 1) * kScrollViewItemMarginWidth;
+        CGFloat actualItemWidth = actualWidth / menuItems.count;
+        
+        for (ACPItem *menuItem in menuItems){
+            
+            menuItem.frame = CGRectMake(menuItem.frame.origin.x, menuItem.frame.origin.y, actualItemWidth, menuItem.frame.size.height);
+        }
+    }
+    
 	ACPItem *menuItem = menuItems[0];
+    
 	_scrollView.contentSize = CGSizeMake(kScrollViewFirstWidth * 2 + (kScrollViewItemMarginWidth * (menuItemsArrayCount - 1)) + menuItem.frame.size.width * menuItemsArrayCount, self.frame.size.height);
     
 	// Do not show scrollIndicator
@@ -75,15 +89,34 @@ static CGFloat const kScrollViewItemMarginWidth = 5.0f;
 }
 
 - (void)setMenu {
-	int i = 0;
-	for (ACPItem *menuItem in _menuArray) {
-		menuItem.tag = 1000 + i;
-		menuItem.center = CGPointMake(menuItem.frame.size.width / 2 + kScrollViewFirstWidth + kScrollViewItemMarginWidth * i + menuItem.frame.size.width * i, self.frame.size.height / 2);
-		menuItem.delegate = self;
-		[_scrollView addSubview:menuItem];
+	
+    
+    if(_fixSizeEnable){
         
-		i++;
-	}
+        
+        int i = 0;
+        for (ACPItem *menuItem in _menuArray) {
+            menuItem.tag = 1000 + i;
+            
+            menuItem.center = CGPointMake(menuItem.frame.size.width / 2 + kScrollViewFirstWidth + kScrollViewItemMarginWidth * i + menuItem.frame.size.width * i, self.frame.size.height / 2);
+            menuItem.delegate = self;
+            [_scrollView addSubview:menuItem];
+            
+            i++;
+        }
+    }
+    else {
+        
+        int i = 0;
+        for (ACPItem *menuItem in _menuArray) {
+            menuItem.tag = 1000 + i;
+            menuItem.center = CGPointMake(menuItem.frame.size.width / 2 + kScrollViewFirstWidth + kScrollViewItemMarginWidth * i + menuItem.frame.size.width * i, self.frame.size.height / 2);
+            menuItem.delegate = self;
+            [_scrollView addSubview:menuItem];
+            
+            i++;
+        }
+    }
 }
 
 

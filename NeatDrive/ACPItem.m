@@ -16,8 +16,6 @@ static inline CGRect ScaleRect(CGRect rect, float n) {
 
 @implementation ACPItem
 
-
-
 # pragma mark -
 # pragma mark Initialization method
 # pragma mark -
@@ -30,6 +28,7 @@ static inline CGRect ScaleRect(CGRect rect, float n) {
 		self.bgImage.image = backgroundImage;
 		self.labelItem.text = labelItem;
 		self.iconImage.image = iconImage;
+        _enable = YES;
 	}
 	return self;
 }
@@ -43,6 +42,7 @@ static inline CGRect ScaleRect(CGRect rect, float n) {
 		self.labelItem.text = labelItem;
 		self.iconImage.image = iconImage;
         self.block = block;
+        _enable = YES;
 	}
 	return self;
 }
@@ -53,6 +53,10 @@ static inline CGRect ScaleRect(CGRect rect, float n) {
 
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    if(!_enable)
+        return;
+        
 	self.highlighted = YES;
     
 	if ([_delegate respondsToSelector:@selector(itemTouchesBegan:)]) {
@@ -61,6 +65,10 @@ static inline CGRect ScaleRect(CGRect rect, float n) {
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    if(!_enable)
+        return;
+    
 	// if move out of 2x rect, cancel select menu...
 	CGPoint location = [[touches anyObject] locationInView:self];
 	if (!CGRectContainsPoint(ScaleRect(self.bounds, 2.0f), location)) {
@@ -69,6 +77,10 @@ static inline CGRect ScaleRect(CGRect rect, float n) {
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    if(!_enable)
+        return;
+    
     //    self.highlighted = NO;
 	CGPoint location = [[touches anyObject] locationInView:self];
 	if (CGRectContainsPoint(ScaleRect(self.bounds, 2.0f), location)) {
@@ -79,6 +91,10 @@ static inline CGRect ScaleRect(CGRect rect, float n) {
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    if(!_enable)
+        return;
+    
 	self.highlighted = NO;
 }
 
@@ -106,6 +122,32 @@ static inline CGRect ScaleRect(CGRect rect, float n) {
 	[_bgImage setHighlighted:highlighted];
 	[_iconImage setHighlighted:highlighted];
 	[_labelItem setHighlighted:highlighted];
+}
+
+- (void)layoutSubviews{
+    
+    [super layoutSubviews];
+    
+    if(_en_block != nil){
+        
+        _en_block(self, _enable);
+    }
+}
+
+- (ACPItem *)setItemEnable:(BOOL)enable{
+    
+    _enable = enable;
+    
+    
+    
+    return self;
+}
+
+- (ACPItem *)setEnableDisableAction:(enableDisableBlock)block{
+    
+    _en_block = block;
+    
+    return self;
 }
 
 @end
