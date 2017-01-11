@@ -48,6 +48,7 @@
 		52E847B51E160918004AAABE /* LocalFilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E847B41E160918004AAABE /* LocalFilesViewController.swift */; };
 		52E847B71E160994004AAABE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E847B61E160994004AAABE /* MenuViewController.swift */; };
 		52E847B91E160BD0004AAABE /* SlidableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E847B81E160BD0004AAABE /* SlidableViewController.swift */; };
+		52F54BEF1E25FB6300136BA7 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F54BEE1E25FB6300136BA7 /* CircleView.swift */; };
 		BA34B4253663C3D183F49D97 /* Pods_NeatDriveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58225BF61607A29AD9AEAB6 /* Pods_NeatDriveTests.framework */; };
 		F1725A51D4906247ED2BB123 /* Pods_NeatDrive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB43F2A786E699606050156C /* Pods_NeatDrive.framework */; };
 /* End PBXBuildFile section */
@@ -123,6 +124,7 @@
 		52E847B41E160918004AAABE /* LocalFilesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalFilesViewController.swift; sourceTree = "<group>"; };
 		52E847B61E160994004AAABE /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		52E847B81E160BD0004AAABE /* SlidableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidableViewController.swift; sourceTree = "<group>"; };
+		52F54BEE1E25FB6300136BA7 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		7CD1335D40345BF32D4230BF /* Pods-NeatDriveTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeatDriveTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NeatDriveTests/Pods-NeatDriveTests.release.xcconfig"; sourceTree = "<group>"; };
 		A3A628776E25F8C6D844FC85 /* Pods_NeatDriveUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeatDriveUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB43F2A786E699606050156C /* Pods_NeatDrive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeatDrive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,6 +226,7 @@
 		52391D611E1B427100D23D94 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				52F54BF01E25FB6700136BA7 /* CircleView */,
 				52E055651E24FCDA006E2C35 /* ACPScrollMenu */,
 				52E55C781E235124007C6EDF /* LocalFileManager */,
 				52E352611E1F4A3000115446 /* HttpServer */,
@@ -380,6 +383,14 @@
 				52E847A81E1355BE004AAABE /* Info.plist */,
 			);
 			path = NeatDriveUITests;
+			sourceTree = "<group>";
+		};
+		52F54BF01E25FB6700136BA7 /* CircleView */ = {
+			isa = PBXGroup;
+			children = (
+				52F54BEE1E25FB6300136BA7 /* CircleView.swift */,
+			);
+			name = CircleView;
 			sourceTree = "<group>";
 		};
 		FB05ADD102E70A1FB6655F02 /* Frameworks */ = {
@@ -712,6 +723,7 @@
 				52E847871E1355BE004AAABE /* AppDelegate.swift in Sources */,
 				52E352531E1E1C4200115446 /* ContainerViewController.swift in Sources */,
 				52391D601E1B41A000D23D94 /* CloudItemCell.swift in Sources */,
+				52F54BEF1E25FB6300136BA7 /* CircleView.swift in Sources */,
 				52E352511E1E1A4300115446 /* EmptySegue.swift in Sources */,
 				52E847B71E160994004AAABE /* MenuViewController.swift in Sources */,
 				52DA668D1E1BD2860055F150 /* DownloadCell.swift in Sources */,

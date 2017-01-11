@@ -13,6 +13,16 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
     
     @IBOutlet weak var tableView : UITableView?
     
+    private var isEdit : Bool = false{
+        
+        didSet{
+            
+            self.tableView?.reloadData()
+        }
+    }
+    
+    var selectedData : [LocalFileMetadata] = Array<LocalFileMetadata>()
+    
     var data : [[LocalFileMetadata]]? {
         
         didSet{
@@ -128,6 +138,62 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
         ACPViewController.showMenu(_delegate:self)
     }
     
+    private func isDataSelected(data : LocalFileMetadata) -> Bool{
+        
+        if isEdit{
+            
+            for d in selectedData{
+                
+                if data.isEqualTo(metaData: d){
+                    
+                    return true
+                }
+            }
+            
+            return false
+        }
+        
+        return false
+    }
+    
+    private func deselectData(data : LocalFileMetadata){
+        
+        if isEdit{
+            
+            var index : Int = -1
+            
+            for i in 0...(selectedData.count-1){
+                
+                let d = selectedData[i]
+                
+                if d.isEqualTo(metaData: data){
+                    
+                    index = i
+                    
+                    break
+                }
+            }
+            
+            if index >= 0{
+                
+                selectedData.remove(at: index)
+                
+                print("data \(data.FileName) deselect")
+            }
+        }
+    }
+    
+    private func selectData(data : LocalFileMetadata){
+        
+        if !self.isDataSelected(data: data){
+            
+            selectedData.append(data)
+            
+            print("data \(data.FileName) select")
+        }
+        
+    }
+    
     //MARK:table data source
     func numberOfSections(in tableView: UITableView) -> Int {
         
@@ -169,6 +235,9 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
             cell?.subtitleLabel?.text = "File size : \(item.FileSizeString)"
         }
         
+        cell?.isEdit = self.isEdit
+        cell?.isSelect = self.isDataSelected(data: item)
+        
         return cell!
     }
     
@@ -179,13 +248,38 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
         
         let item : LocalFileMetadata = self.data![indexPath.section][indexPath.row]
         
-        if item.IsFolder{
+        if isEdit{
             
-            LocalFileManager.shareInstance.contentsInPath(path: item.FilePath, complete: { result in
+            if self.isDataSelected(data: item){
+               
+                //deselect data
+                self.deselectData(data: item)
                 
-                self.processData(result: result)
-            })
+                let cell : FileCell = tableView.cellForRow(at: indexPath) as! FileCell
+                
+                cell.isSelect = false
+            }
+            else{
+                
+                //select data
+                self.selectData(data: item)
+                
+                let cell : FileCell = tableView.cellForRow(at: indexPath) as! FileCell
+                
+                cell.isSelect = true
+            }
         }
+        else{
+           
+            if item.IsFolder{
+                
+                LocalFileManager.shareInstance.contentsInPath(path: item.FilePath, complete: { result in
+                    
+                    self.processData(result: result)
+                })
+            }
+        }
+        
     }
     
     //MARK:ACPViewControllerDataSource
@@ -211,16 +305,50 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
             ACPItem(acpItem: nil, iconImage: nil, label: "Rename", andAction: { item in
                 
                 print("Re-name")
+            }).setItemEnable(self.selectedData.count == 1 ? true : false).setEnableDisableAction({ item, enable in
+                
+                if enable {
+                    
+                    item?.labelItem.textColor = UIColor.darkGray
+                }
+                else{
+                    
+                    item?.labelItem.textColor = UIColor.lightGray
+                }
             }),
             
             ACPItem(acpItem: nil, iconImage: nil, label: "Edit", andAction: { item in
                 
                 print("Edit")
+                
+                self.isEdit = !self.isEdit
+            }).setItemEnable(!self.isEdit).setEnableDisableAction({ item, enable in
+                
+                if enable {
+                    
+                    item?.labelItem.textColor = UIColor.darkGray
+                }
+                else{
+                    
+                    item?.labelItem.textColor = UIColor.lightGray
+                }
             }),
             
-            ACPItem(acpItem: nil, iconImage: nil, label: "Edit", andAction: { item in
+            ACPItem(acpItem: nil, iconImage: nil, label: "Cancel Edit", andAction: { item in
                 
                 print("Cancel")
+                
+                self.isEdit = !self.isEdit
+            }).setItemEnable(self.isEdit).setEnableDisableAction({ item, enable in
+                
+                if enable {
+                    
+                    item?.labelItem.textColor = UIColor.darkGray
+                }
+                else{
+                    
+                    item?.labelItem.textColor = UIColor.lightGray
+                }
             })
         ]
         

@@ -139,6 +139,16 @@ struct LocalFileMetadata {
         }
     }
     
+    private let metadataId : NSUUID = NSUUID()
+    
+    var MetadataID : NSUUID{
+        
+        get{
+            
+            return self.metadataId
+        }
+    }
+    
     init(_fileURL:URL, _fileSize:UInt64, _createDate:Date?, _modifyDate:Date?, _filename:String, _isFolder:Bool){
         
         self.fileURL = _fileURL
@@ -147,5 +157,10 @@ struct LocalFileMetadata {
         self.modifyDate = _modifyDate
         self.filename = _filename
         self.isFolder = _isFolder
+    }
+    
+    func isEqualTo(metaData : LocalFileMetadata) -> Bool{
+        
+        return self.metadataId.uuidString == metaData.MetadataID.uuidString
     }
 }

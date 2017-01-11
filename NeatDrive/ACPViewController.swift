@@ -100,5 +100,7 @@ class ACPViewController : UIViewController, ACPScrollDelegate{
             
             delegate?.selectItemAtIndex(selectedIndex: selectedIndex)
         }
+        
+        self.dismiss()
     }
 }
