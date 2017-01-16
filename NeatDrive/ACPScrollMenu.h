@@ -85,4 +85,6 @@ typedef enum {
 */
 - (void)setACPBackgroundColor:(UIColor *)color;
 
+- (NSArray *)menuItems;
+
 @end

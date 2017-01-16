@@ -9,15 +9,33 @@
 import Foundation
 import UIKit
 
-class LocalFilesViewController : SlidableViewController, UITableViewDataSource, UITableViewDelegate, ACPViewControllerDelegate{
+class LocalFilesViewController : SlidableViewController, UITableViewDataSource, UITableViewDelegate{
     
     @IBOutlet weak var tableView : UITableView?
+    @IBOutlet weak var menu : ACPScrollMenu?
+    @IBOutlet weak var menuBottomConstraint : NSLayoutConstraint?
+    @IBOutlet weak var plusBtn : UIButton?
     
     private var isEdit : Bool = false{
         
         didSet{
             
-            self.tableView?.reloadData()
+            self.deselectAllData()
+            self.ReloadData()
+            
+            self.plusBtn?.isHidden = self.isEdit
+            
+            if self.isEdit == true{
+                
+                self.setupMenuItems()
+                self.showEditMenu(anim: true)
+            }
+            else{
+                
+                self.hideEditMenu(anim: true)
+            }
+            
+            self.updateMenu()
         }
     }
     
@@ -63,6 +81,12 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
             self.atRoot = isRoot
         }
         
+        self.setupMenuItems()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -83,6 +107,7 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
         }
         
     }
+    
     
     func processData(result:[LocalFileMetadata]){
         
@@ -133,10 +158,63 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
     @IBAction func onPlusTap(){
         
         self.isEdit = true
-        ACPViewController.showMenu(_delegate:self)
     }
     
+    private func showEditMenu(anim:Bool){
+        
+        if anim{
+            
+            self.menuBottomConstraint?.constant = 0
+            UIView.animate(withDuration: 0.2, animations: {
+                
+                self.view.layoutIfNeeded()
+            })
+        }
+        else{
+            
+            self.menuBottomConstraint?.constant = 0
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    private func hideEditMenu(anim:Bool){
+        
+        if anim{
+            
+            self.menuBottomConstraint?.constant = -(self.menu?.bounds.height)!
+            UIView.animate(withDuration: 0.2, animations: {
+                
+                self.view.layoutIfNeeded()
+            })
+        }
+        else{
+            
+            self.menuBottomConstraint?.constant = -(self.menu?.bounds.height)!
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    private func updateMenu(){
+        
+        
+        if selectedData.count == 1{
+            
+            let mItem : ACPItem = self.menu?.menuItems()[1] as! ACPItem
+            mItem.setItemEnable(true)
+        }
+        else{
+            
+            let mItem : ACPItem = self.menu?.menuItems()[1] as! ACPItem
+            mItem.setItemEnable(false)
+        }
+    }
+    
+    /**
+     Pull data from LocalFileManager
+    */
     private func ReloadData(){
+        
+        self.deselectAllData()
         
         LocalFileManager.shareInstance.contentsInPath(path: LocalFileManager.shareInstance.currentPathString, complete: { result in
             
@@ -200,6 +278,8 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
                 
                 print("data \(data.FileName) deselect")
             }
+            
+            self.updateMenu()
         }
     }
     
@@ -207,10 +287,9 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
     
         if isEdit{
             
-            if self.selectedData.count > 0{
-                
-                self.selectedData.removeAll()
-            }
+            self.selectedData.removeAll()
+            
+            self.updateMenu()
         }
     
     }
@@ -222,8 +301,28 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
             selectedData.append(data)
             
             print("data \(data.FileName) select")
+            
+            self.updateMenu()
         }
         
+    }
+    
+    private func selectAllData(){
+        
+        if isEdit{
+            
+            self.selectedData.removeAll()
+            
+            for arr in self.data!{
+                
+                for d in arr{
+                    
+                    self.selectedData.append(d)
+                }
+            }
+            
+            self.updateMenu()
+        }
     }
     
     private func filePathsFromSelectedData() -> [String]{
@@ -333,8 +432,10 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
         
     }
     
-    //MARK:ACPViewControllerDataSource
-    func menuItems() -> Array<ACPItem> {
+    //MARK:Setup ACPScrollMenu items
+    func setupMenuItems() {
+        
+        self.menu?.fixSizeEnable = true
         
         let arr : [ACPItem] = [
         
@@ -531,6 +632,18 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
                     self.present(warningAlert, animated: true, completion: nil)
                 })
                 
+                let selectAllAction = UIAlertAction(title: "Select All", style: .default, handler: { action in
+                    
+                    self.selectAllData()
+                    self.tableView?.reloadData()
+                })
+                
+                let deselectAllAction = UIAlertAction(title: "Deselect All", style: .default, handler: { action in
+                    
+                    self.deselectAllData()
+                    self.tableView?.reloadData()
+                })
+                
                 let moveToAction = UIAlertAction(title: "Move To", style: .default, handler: { action in
                     
                     
@@ -542,12 +655,25 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
                 })
                 
                 menuAlert.addAction(cancelAction)
-                menuAlert.addAction(moveToAction)
-                menuAlert.addAction(deleteAction)
+                
+                if self.selectedData.count > 0{
+                    
+                    menuAlert.addAction(deleteAction)
+                }
+                
+                menuAlert.addAction(deselectAllAction)
+                menuAlert.addAction(selectAllAction)
+                
+                
+                if self.selectedData.count > 0{
+                    
+                    menuAlert.addAction(moveToAction)
+                }
+                
                 
                 self.present(menuAlert, animated: true, completion: nil)
                 
-            }).setItemEnable(self.selectedData.count >= 1 ? true : false).setEnableDisableAction({ item, enable in
+            }).setItemEnable(true).setEnableDisableAction({ item, enable in
                 
                 if enable {
                     
@@ -578,10 +704,6 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
             })
         ]
         
-        return arr
-    }
-    
-    func selectItemAtIndex(selectedIndex:Int){
-        
+        self.menu?.setUp(arr)
     }
 }

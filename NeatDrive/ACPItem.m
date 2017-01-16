@@ -138,7 +138,7 @@ static inline CGRect ScaleRect(CGRect rect, float n) {
     
     _enable = enable;
     
-    
+    [self setNeedsLayout];
     
     return self;
 }

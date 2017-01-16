@@ -11,6 +11,7 @@
 
 static CGFloat const kScrollViewFirstWidth = 12.0f;
 static CGFloat const kScrollViewItemMarginWidth = 5.0f;
+static CGFloat const kScrollViewItemMarginHeight = 5.0f;
 
 @implementation ACPScrollMenu
 
@@ -53,6 +54,8 @@ static CGFloat const kScrollViewItemMarginWidth = 5.0f;
     
 	NSUInteger menuItemsArrayCount = menuItems.count;
     
+    [_scrollView removeFromSuperview];
+    
 	// Setting ScrollView
 	_scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     
@@ -64,7 +67,7 @@ static CGFloat const kScrollViewItemMarginWidth = 5.0f;
         
         for (ACPItem *menuItem in menuItems){
             
-            menuItem.frame = CGRectMake(menuItem.frame.origin.x, menuItem.frame.origin.y, actualItemWidth, menuItem.frame.size.height);
+            menuItem.frame = CGRectMake(menuItem.frame.origin.x, menuItem.frame.origin.y, actualItemWidth, menuItem.frame.size.height - kScrollViewItemMarginHeight * 2);
         }
     }
     
@@ -231,6 +234,11 @@ static CGFloat const kScrollViewItemMarginWidth = 5.0f;
 
 - (void)setACPBackgroundColor:(UIColor *)color {
 	self.backgroundColor = color;
+}
+
+- (NSArray *)menuItems{
+    
+    return _menuArray;
 }
 
 @end
