@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum LocalFileManagerError : Error {
+public enum LocalFileManagerError : Error {
     case InternalError(String)
     case folderExistError(String)
     case createFolderError(String)

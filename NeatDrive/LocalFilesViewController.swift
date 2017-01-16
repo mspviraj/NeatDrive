@@ -69,10 +69,7 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
         super.viewDidAppear(animated)
         
         
-        LocalFileManager.shareInstance.contentsInPath(path: LocalFileManager.shareInstance.currentPathString, complete: { result in
-            
-            self.processData(result: result)
-        })
+        self.ReloadData()
  
         
         //we refresh back button
@@ -135,7 +132,30 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
     
     @IBAction func onPlusTap(){
         
+        self.isEdit = true
         ACPViewController.showMenu(_delegate:self)
+    }
+    
+    private func ReloadData(){
+        
+        LocalFileManager.shareInstance.contentsInPath(path: LocalFileManager.shareInstance.currentPathString, complete: { result in
+            
+            self.processData(result: result)
+        })
+    }
+    
+    private func presentErrorAlert(title:String?, msg:String?){
+        
+        let errorAlert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .cancel) { action in
+            
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        errorAlert.addAction(okAction)
+        
+        self.present(errorAlert, animated: true, completion: nil)
     }
     
     private func isDataSelected(data : LocalFileMetadata) -> Bool{
@@ -183,6 +203,18 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
         }
     }
     
+    private func deselectAllData(){
+    
+        if isEdit{
+            
+            if self.selectedData.count > 0{
+                
+                self.selectedData.removeAll()
+            }
+        }
+    
+    }
+    
     private func selectData(data : LocalFileMetadata){
         
         if !self.isDataSelected(data: data){
@@ -192,6 +224,21 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
             print("data \(data.FileName) select")
         }
         
+    }
+    
+    private func filePathsFromSelectedData() -> [String]{
+        
+        var paths : [String] = Array<String>()
+        
+        if isEdit{
+            
+            for data in self.selectedData{
+                
+                paths.append(data.FilePath)
+            }
+        }
+        
+        return paths
     }
     
     //MARK:table data source
@@ -278,6 +325,10 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
                     self.processData(result: result)
                 })
             }
+            else{
+                
+                //TODO:open file
+            }
         }
         
     }
@@ -290,7 +341,63 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
             ACPItem(acpItem: nil, iconImage: nil, label: "Add Folder", andAction: { item in
                 
                 print("add folder")
-            }).setItemEnable(false).setEnableDisableAction({ item, enable in
+                
+                let folderAlert = UIAlertController(title: "Create folder", message: "Give a name for new folder", preferredStyle: .alert)
+                
+                folderAlert.addTextField(configurationHandler: { (textField : UITextField) in
+                    
+                    textField.placeholder = "Name"
+                    
+                })
+                
+                let confirmAction = UIAlertAction(title: "Confirm", style: .default, handler: { action in
+                    
+                    
+                    let folderName = folderAlert.textFields?[0].text
+                    
+                    if folderName != ""{
+                     
+                        LocalFileManager.shareInstance.createfolderAtPath(path: LocalFileManager.shareInstance.currentPathString, folderName: folderName!, complete: { path, error in
+                            
+                            if error == nil{
+                                
+                                self.ReloadData()
+                            }
+                            else{
+                                
+                                switch error! {
+                                    
+                                case .folderExistError(_):
+                                    
+                                    self.presentErrorAlert(title: "Error", msg: "Folder \(folderName!) already exist")
+                                    
+                                    break
+                                case .createFolderError(_):
+                                    
+                                    self.presentErrorAlert(title: "Error", msg: "Unable to create folder")
+                                    
+                                    break
+                                
+                                default:
+                                    break
+                                }
+                            }
+                        })
+                    }
+                })
+                
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
+                    
+                    self.dismiss(animated: true, completion: nil)
+                })
+                
+                folderAlert.addAction(cancelAction)
+                folderAlert.addAction(confirmAction)
+                
+                self.present(folderAlert, animated: true, completion: nil)
+                
+                
+            }).setItemEnable(true).setEnableDisableAction({ item, enable in
                 
                 if enable {
                     
@@ -305,6 +412,64 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
             ACPItem(acpItem: nil, iconImage: nil, label: "Rename", andAction: { item in
                 
                 print("Re-name")
+                
+                let renameAlert = UIAlertController(title: "Rename", message: "Give it a new name", preferredStyle: .alert)
+                
+                renameAlert.addTextField(configurationHandler: { (textField : UITextField) in
+                    
+                    textField.placeholder = "Name"
+                    
+                    let data = self.selectedData.first
+                    
+                    textField.text = data?.FileNameWithoutExtension
+                })
+                
+                let confirmAction = UIAlertAction(title: "Confirm", style: .default, handler: { action in
+                    
+                    
+                    let newName = renameAlert.textFields?[0].text
+                    
+                    if newName != ""{
+                        
+                        let data = self.selectedData.first
+                     
+                        LocalFileManager.shareInstance.renameFile(filePath: (data?.FilePath)!, newName: newName!, complete: { filePath, error in
+                            
+                            if error == nil{
+                                
+                                self.deselectData(data: data!)
+                                self.ReloadData()
+                                
+                            }
+                            else{
+                                
+                                switch error! {
+                                    
+                                case .renameDuplicateError(_):
+                                    
+                                    self.presentErrorAlert(title: "Error", msg: "Name \(newName!) has been used")
+                                    break
+                                case .renameFileError(_):
+                                    self.presentErrorAlert(title: "Error", msg: "Unable to rename")
+                                    break
+                                default:
+                                    break
+                                }
+                            }
+                        })
+                    }
+                })
+                
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
+                    
+                    self.dismiss(animated: true, completion: nil)
+                })
+                
+                renameAlert.addAction(cancelAction)
+                renameAlert.addAction(confirmAction)
+                
+                self.present(renameAlert, animated: true, completion: nil)
+                
             }).setItemEnable(self.selectedData.count == 1 ? true : false).setEnableDisableAction({ item, enable in
                 
                 if enable {
@@ -321,8 +486,68 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
                 
                 print("Edit")
                 
-                self.isEdit = !self.isEdit
-            }).setItemEnable(!self.isEdit).setEnableDisableAction({ item, enable in
+                let menuAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+                
+                let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { action in
+                    
+                    
+                    let warningAlert = UIAlertController(title: "Delete files", message: "Are you sure you want to delete selected files?", preferredStyle: .alert)
+                    
+                    let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { action in
+                        
+                        LocalFileManager.shareInstance.deleteFiles(filePaths: self.filePathsFromSelectedData(), fileDeleted: { path in
+                            
+                            
+                            }, complete: { error in
+                                
+                                if error == nil{
+                                    
+                                    self.deselectAllData()
+                                    self.ReloadData()
+                                }
+                                else{
+                                    
+                                    switch error! {
+                                    
+                                    case .deleteFileError(_):
+                                        
+                                        self.presentErrorAlert(title: "Error", msg: "Unable to delete file")
+                                        break
+                                    default:
+                                        break
+                                    }
+                                }
+                        })
+                    })
+                    
+                    let cancelAction = UIAlertAction(title: "No", style: .cancel, handler: { action in
+                        
+                        self.dismiss(animated: true, completion: nil)
+                    })
+                    
+                    warningAlert.addAction(cancelAction)
+                    warningAlert.addAction(deleteAction)
+                    
+                    self.present(warningAlert, animated: true, completion: nil)
+                })
+                
+                let moveToAction = UIAlertAction(title: "Move To", style: .default, handler: { action in
+                    
+                    
+                })
+                
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
+                    
+                    self.dismiss(animated: true, completion: nil)
+                })
+                
+                menuAlert.addAction(cancelAction)
+                menuAlert.addAction(moveToAction)
+                menuAlert.addAction(deleteAction)
+                
+                self.present(menuAlert, animated: true, completion: nil)
+                
+            }).setItemEnable(self.selectedData.count >= 1 ? true : false).setEnableDisableAction({ item, enable in
                 
                 if enable {
                     
@@ -336,10 +561,11 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
             
             ACPItem(acpItem: nil, iconImage: nil, label: "Cancel Edit", andAction: { item in
                 
-                print("Cancel")
+                print("Cancel edit")
                 
-                self.isEdit = !self.isEdit
-            }).setItemEnable(self.isEdit).setEnableDisableAction({ item, enable in
+                self.isEdit = false
+                
+            }).setItemEnable(true).setEnableDisableAction({ item, enable in
                 
                 if enable {
                     

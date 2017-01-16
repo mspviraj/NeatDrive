@@ -124,6 +124,11 @@ struct LocalFileMetadata {
         return self.filename
     }
     
+    var FileNameWithoutExtension : String{
+        
+        return (self.filename as NSString).deletingPathExtension
+    }
+    
     var FileExtension : String{
         
         return (self.filename as NSString).pathExtension
