@@ -17,8 +17,24 @@ protocol MoveFileDelegate {
 
 struct FolderMetadata {
     
+    private let documentPath : String = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
     let fileURL : URL
     let folderName : String
+    
+    func level() -> Int{
+        
+        if fileURL.path == self.documentPath{
+            
+            return 0
+        }
+        
+        var path = fileURL.path.replacingOccurrences(of: self.documentPath, with: "")
+        if path.hasPrefix("/"){
+            path.remove(at: path.startIndex)
+        }
+        
+        return path.components(separatedBy: "/").count - 1
+    }
 }
 
 class MoveFileController : UIViewController, UITableViewDelegate, UITableViewDataSource{
@@ -174,11 +190,35 @@ class MoveFileController : UIViewController, UITableViewDelegate, UITableViewDat
             //if destination path contain source path
             //they are in the same path and source folder can not
             //be move to destination folder
-            if dPath.range(of: sPath) != nil{
+            if self.destPathContainSourcePath(destPath: dPath, sourcePath: sPath){
                 
                 return false
             }
             
+        }
+        
+        return true
+    }
+    
+    /**
+     Give relative path only
+    */
+    private func destPathContainSourcePath(destPath:String, sourcePath:String) -> Bool{
+        
+        let dPathComps = destPath.components(separatedBy: "/")
+        let sPathComps = sourcePath.components(separatedBy: "/")
+        
+        if sPathComps.count > dPathComps.count{
+            
+            return false
+        }
+        
+        for i in 0...(sPathComps.count - 1){
+            
+            if sPathComps[i] != dPathComps[i]{
+                
+                return false
+            }
         }
         
         return true
@@ -210,6 +250,7 @@ class MoveFileController : UIViewController, UITableViewDelegate, UITableViewDat
         
         cell?.textLabel?.text = folder?.folderName
         cell?.imageView?.image = UIImage(named: "test")
+        cell?.indentationLevel = (folder?.level())!
         
         return cell!
     }

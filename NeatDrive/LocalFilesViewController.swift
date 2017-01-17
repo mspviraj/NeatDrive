@@ -9,12 +9,14 @@
 import Foundation
 import UIKit
 
-class LocalFilesViewController : SlidableViewController, UITableViewDataSource, UITableViewDelegate, MoveFileDelegate{
+class LocalFilesViewController : SlidableViewController, UITableViewDataSource, UITableViewDelegate, MoveFileDelegate, UISearchResultsUpdating, UISearchControllerDelegate, UISearchBarDelegate{
     
     @IBOutlet weak var tableView : UITableView?
     @IBOutlet weak var menu : ACPScrollMenu?
     @IBOutlet weak var menuBottomConstraint : NSLayoutConstraint?
     @IBOutlet weak var plusBtn : UIButton?
+    
+    private let searchController = UISearchController(searchResultsController: nil)
     
     private var isEdit : Bool = false{
         
@@ -78,6 +80,14 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
         super.viewDidLoad()
         
         self.title = "All Files"
+        
+        self.searchController.searchResultsUpdater = self
+        self.searchController.delegate = self
+        self.searchController.searchBar.delegate = self
+        self.searchController.searchBar.placeholder = "What are you looking for?"
+        self.searchController.dimsBackgroundDuringPresentation = true
+        self.definesPresentationContext = true
+        self.tableView?.tableHeaderView = self.searchController.searchBar
         
         LocalFileManager.shareInstance.onCurrentPathChanged = { isRoot in
         
@@ -226,10 +236,23 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
         
         self.deselectAllData()
         
-        LocalFileManager.shareInstance.contentsInPath(path: LocalFileManager.shareInstance.currentPathString, complete: { result in
+        
+        if self.searchController.searchBar.text == nil || self.searchController.searchBar.text == ""{
             
-            self.processData(result: result)
-        })
+            LocalFileManager.shareInstance.contentsInPath(path: LocalFileManager.shareInstance.currentPathString, complete: { result in
+                
+                self.processData(result: result)
+            })
+        }
+        else{
+            
+            LocalFileManager.shareInstance.searchFile(path: LocalFileManager.shareInstance.currentPathString, keyword: self.searchController.searchBar.text!, deepSearch: true) { result in
+                
+                self.processData(result: result)
+            }
+        }
+        
+        
     }
     
     private func presentErrorAlert(title:String?, msg:String?){
@@ -308,6 +331,11 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
         
         if !self.isDataSelected(data: data){
             
+            if SystemFolderManager.shareInstance.isSystemFolder(path: data.FilePath){
+                
+                return
+            }
+            
             selectedData.append(data)
             
             print("data \(data.FileName) select")
@@ -327,7 +355,14 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
                 
                 for d in arr{
                     
+                    if SystemFolderManager.shareInstance.isSystemFolder(path: d.FilePath){
+                        
+                        continue
+                    }
+                    
                     self.selectedData.append(d)
+                    
+                    print("data \(d.FileName) select")
                 }
             }
             
@@ -348,6 +383,43 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
         }
         
         return paths
+    }
+    
+    //MARK:UISearchBarDelegate
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        
+        searchBar.text = nil
+        self.ReloadData()
+    }
+ 
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        
+        self.disablePanGesture()
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        
+        self.enablePanGesture()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        self.ReloadData()
+        self.searchController.isActive = false
+    }
+
+    
+    //MARK:UISearchResultUpdating
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        if searchController.searchBar.text == nil || searchController.searchBar.text == ""{
+        
+            return
+        }
+        
+        self.ReloadData()
+        
     }
     
     //MARK:table data source
@@ -383,16 +455,25 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
         
         cell?.titleLabel?.text = item.FileName
         
+        cell?.isEdit = self.isEdit
+        cell?.isSelect = self.isDataSelected(data: item)
+        
         if item.IsFolder{
             cell?.subtitleLabel?.text = ""
+            
+            //system folder not allow to be edit
+            if SystemFolderManager.shareInstance.isSystemFolder(path: item.FilePath){
+                
+                cell?.isEdit = false
+                cell?.isSelect = false
+            }
         }
         else{
             
             cell?.subtitleLabel?.text = "File size : \(item.FileSizeString)"
         }
         
-        cell?.isEdit = self.isEdit
-        cell?.isSelect = self.isDataSelected(data: item)
+        
         
         return cell!
     }
@@ -405,6 +486,12 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
         let item : LocalFileMetadata = self.data![indexPath.section][indexPath.row]
         
         if isEdit{
+            
+            //system folder not allow to be edit
+            if SystemFolderManager.shareInstance.isSystemFolder(path: item.FilePath){
+                
+                return
+            }
             
             if self.isDataSelected(data: item){
                

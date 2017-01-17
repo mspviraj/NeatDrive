@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		264F3B172FF8E4163B62AE42 /* Pods_NeatDriveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3A628776E25F8C6D844FC85 /* Pods_NeatDriveUITests.framework */; };
+		520E6B651E2E11CE00BB2A9A /* SystemFolderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520E6B641E2E11CE00BB2A9A /* SystemFolderManager.swift */; };
+		520E6B671E2E127C00BB2A9A /* SystemFolderList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 520E6B661E2E127C00BB2A9A /* SystemFolderList.plist */; };
 		521B3DB21E237C8A0053EAAE /* FileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521B3DB11E237C8A0053EAAE /* FileCell.swift */; };
 		52391D561E1B30FF00D23D94 /* CloudServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52391D551E1B30FF00D23D94 /* CloudServiceViewController.swift */; };
 		52391D591E1B318A00D23D94 /* FileShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52391D581E1B318A00D23D94 /* FileShareViewController.swift */; };
@@ -75,6 +77,8 @@
 		11A52F3443333FA62D87E14E /* Pods-NeatDriveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeatDriveTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NeatDriveTests/Pods-NeatDriveTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3BD7158A30DD702E6E75DD35 /* Pods-NeatDrive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeatDrive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NeatDrive/Pods-NeatDrive.debug.xcconfig"; sourceTree = "<group>"; };
 		3CF1410B986EABFEE2704EBB /* Pods-NeatDriveUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeatDriveUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NeatDriveUITests/Pods-NeatDriveUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		520E6B641E2E11CE00BB2A9A /* SystemFolderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemFolderManager.swift; sourceTree = "<group>"; };
+		520E6B661E2E127C00BB2A9A /* SystemFolderList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SystemFolderList.plist; sourceTree = "<group>"; };
 		521B3DB11E237C8A0053EAAE /* FileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileCell.swift; sourceTree = "<group>"; };
 		52391D551E1B30FF00D23D94 /* CloudServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudServiceViewController.swift; sourceTree = "<group>"; };
 		52391D581E1B318A00D23D94 /* FileShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileShareViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +178,15 @@
 				D0419317DF0405B0A1DE0C49 /* Pods-NeatDriveUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		520E6B631E2E11AC00BB2A9A /* SystemFolderManager */ = {
+			isa = PBXGroup;
+			children = (
+				520E6B641E2E11CE00BB2A9A /* SystemFolderManager.swift */,
+				520E6B661E2E127C00BB2A9A /* SystemFolderList.plist */,
+			);
+			name = SystemFolderManager;
 			sourceTree = "<group>";
 		};
 		52391D521E1B30AD00D23D94 /* LocalFiles */ = {
@@ -352,6 +365,7 @@
 				52DA66811E1BA3750055F150 /* NeatDrive.entitlements */,
 				52391D611E1B427100D23D94 /* ThirdParty */,
 				52391D711E1B782800D23D94 /* Utility */,
+				520E6B631E2E11AC00BB2A9A /* SystemFolderManager */,
 				52F907BD1E2DAFB40019C2B9 /* MoveFile */,
 				52391D5A1E1B31AB00D23D94 /* StorageStatus */,
 				52391D571E1B316B00D23D94 /* FileShare */,
@@ -544,6 +558,7 @@
 				52E352601E1F487000115446 /* GCDWebUploader.bundle in Resources */,
 				52E8478E1E1355BE004AAABE /* Assets.xcassets in Resources */,
 				52E8478C1E1355BE004AAABE /* Main.storyboard in Resources */,
+				520E6B671E2E127C00BB2A9A /* SystemFolderList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -738,6 +753,7 @@
 				52F54BEF1E25FB6300136BA7 /* CircleView.swift in Sources */,
 				52E352511E1E1A4300115446 /* EmptySegue.swift in Sources */,
 				52E847B71E160994004AAABE /* MenuViewController.swift in Sources */,
+				520E6B651E2E11CE00BB2A9A /* SystemFolderManager.swift in Sources */,
 				52DA668D1E1BD2860055F150 /* DownloadCell.swift in Sources */,
 				52E55C7C1E236B5E007C6EDF /* LocalFileMetadata.swift in Sources */,
 				52E55C7A1E235142007C6EDF /* LocalFileManager.swift in Sources */,

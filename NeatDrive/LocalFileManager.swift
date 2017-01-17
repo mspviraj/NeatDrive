@@ -463,7 +463,7 @@ class LocalFileManager : NSObject{
                 
                 for data in result{
                     
-                    if data.FileName.contains(keyword){
+                    if data.FileName.localizedCaseInsensitiveContains(keyword){
                         
                         filtedFile.append(data)
                     }
