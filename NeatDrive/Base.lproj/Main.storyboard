@@ -213,6 +213,44 @@
             </objects>
             <point key="canvasLocation" x="1309.5999999999999" y="-1392.0539730134933"/>
         </scene>
+        <!--Move File Controller-->
+        <scene sceneID="kdv-vp-evI">
+            <objects>
+                <viewController id="SqN-PH-H1c" customClass="MoveFileController" customModule="NeatDrive" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G6e-Ch-bGI"/>
+                        <viewControllerLayoutGuide type="bottom" id="F8V-AO-qvU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xCO-sO-lhd">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4A0-6C-uhs">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="SqN-PH-H1c" id="hYa-Zf-ady"/>
+                                    <outlet property="delegate" destination="SqN-PH-H1c" id="0NK-hi-sVP"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4A0-6C-uhs" firstAttribute="bottom" secondItem="F8V-AO-qvU" secondAttribute="top" id="5Lz-Gf-Wyc"/>
+                            <constraint firstItem="4A0-6C-uhs" firstAttribute="top" secondItem="G6e-Ch-bGI" secondAttribute="bottom" id="6kH-aK-RfM"/>
+                            <constraint firstAttribute="trailing" secondItem="4A0-6C-uhs" secondAttribute="trailing" id="EfG-aS-rrV"/>
+                            <constraint firstItem="4A0-6C-uhs" firstAttribute="leading" secondItem="xCO-sO-lhd" secondAttribute="leading" id="IOb-dw-f5Q"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="W14-Qu-OC3"/>
+                    <connections>
+                        <outlet property="tableView" destination="4A0-6C-uhs" id="mzH-ed-xaE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bEq-nc-Zwu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4312.8000000000002" y="-2507.4962518740631"/>
+        </scene>
         <!--Cloud Service View Controller-->
         <scene sceneID="hxn-eR-uzg">
             <objects>
@@ -918,6 +956,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tjy-X8-JQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="582" y="1332"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iWO-uq-baS">
+            <objects>
+                <navigationController storyboardIdentifier="MoveFileNav" automaticallyAdjustsScrollViewInsets="NO" id="lYS-NL-7AX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zVW-Yz-vTU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SqN-PH-H1c" kind="relationship" relationship="rootViewController" id="2FH-SV-ha5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lqq-fX-CvW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3373.5999999999999" y="-2507.4962518740631"/>
         </scene>
     </scenes>
     <resources>

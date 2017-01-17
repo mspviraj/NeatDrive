@@ -16,7 +16,6 @@ public enum LocalFileManagerError : Error {
     case renameDuplicateError(String)
     case deleteSingleFileError(String)
     case deleteFileError([String:String])//key as path, value as reason
-    case moveFileDestError(String)
     case moveSingleFileError(String)
     case moveFileError([String:String])//key as path, value as reason
 }
@@ -123,14 +122,11 @@ class LocalFileManager : NSObject{
                 
                 if deep{
                     
-                    if deep{
+                    let enumerator : FileManager.DirectoryEnumerator = FileManager.default.enumerator(at: newPathURL, includingPropertiesForKeys: nil, options: .skipsHiddenFiles, errorHandler:nil)!
+                    
+                    for case let fileURL as URL in enumerator{
                         
-                        let enumerator : FileManager.DirectoryEnumerator = FileManager.default.enumerator(at: newPathURL, includingPropertiesForKeys: nil, options: .skipsHiddenFiles, errorHandler:nil)!
-                        
-                        for case let fileURL as URL in enumerator{
-                            
-                            contentURLs.append(fileURL)
-                        }
+                        contentURLs.append(fileURL)
                     }
                 }
                 else{
@@ -371,7 +367,6 @@ class LocalFileManager : NSObject{
      Move file or folder to destination path
      
      Error:
-     moveFileDestError(reason[String])
      moveSingleFileError(reason[String])
      moveFileError([path:reason][String:String])
     */

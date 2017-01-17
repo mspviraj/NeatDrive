@@ -49,6 +49,7 @@
 		52E847B71E160994004AAABE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E847B61E160994004AAABE /* MenuViewController.swift */; };
 		52E847B91E160BD0004AAABE /* SlidableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E847B81E160BD0004AAABE /* SlidableViewController.swift */; };
 		52F54BEF1E25FB6300136BA7 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F54BEE1E25FB6300136BA7 /* CircleView.swift */; };
+		52F907BF1E2DAFD30019C2B9 /* MoveFileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F907BE1E2DAFD30019C2B9 /* MoveFileController.swift */; };
 		BA34B4253663C3D183F49D97 /* Pods_NeatDriveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58225BF61607A29AD9AEAB6 /* Pods_NeatDriveTests.framework */; };
 		F1725A51D4906247ED2BB123 /* Pods_NeatDrive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB43F2A786E699606050156C /* Pods_NeatDrive.framework */; };
 /* End PBXBuildFile section */
@@ -125,6 +126,7 @@
 		52E847B61E160994004AAABE /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		52E847B81E160BD0004AAABE /* SlidableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidableViewController.swift; sourceTree = "<group>"; };
 		52F54BEE1E25FB6300136BA7 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		52F907BE1E2DAFD30019C2B9 /* MoveFileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveFileController.swift; sourceTree = "<group>"; };
 		7CD1335D40345BF32D4230BF /* Pods-NeatDriveTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeatDriveTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NeatDriveTests/Pods-NeatDriveTests.release.xcconfig"; sourceTree = "<group>"; };
 		A3A628776E25F8C6D844FC85 /* Pods_NeatDriveUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeatDriveUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB43F2A786E699606050156C /* Pods_NeatDrive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeatDrive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -350,6 +352,7 @@
 				52DA66811E1BA3750055F150 /* NeatDrive.entitlements */,
 				52391D611E1B427100D23D94 /* ThirdParty */,
 				52391D711E1B782800D23D94 /* Utility */,
+				52F907BD1E2DAFB40019C2B9 /* MoveFile */,
 				52391D5A1E1B31AB00D23D94 /* StorageStatus */,
 				52391D571E1B316B00D23D94 /* FileShare */,
 				52E3524D1E1C9D3200115446 /* Passcode */,
@@ -391,6 +394,14 @@
 				52F54BEE1E25FB6300136BA7 /* CircleView.swift */,
 			);
 			name = CircleView;
+			sourceTree = "<group>";
+		};
+		52F907BD1E2DAFB40019C2B9 /* MoveFile */ = {
+			isa = PBXGroup;
+			children = (
+				52F907BE1E2DAFD30019C2B9 /* MoveFileController.swift */,
+			);
+			name = MoveFile;
 			sourceTree = "<group>";
 		};
 		FB05ADD102E70A1FB6655F02 /* Frameworks */ = {
@@ -699,6 +710,7 @@
 				52391D591E1B318A00D23D94 /* FileShareViewController.swift in Sources */,
 				52E0556D1E24FCFC006E2C35 /* ACPScrollMenu.m in Sources */,
 				52E847B51E160918004AAABE /* LocalFilesViewController.swift in Sources */,
+				52F907BF1E2DAFD30019C2B9 /* MoveFileController.swift in Sources */,
 				521B3DB21E237C8A0053EAAE /* FileCell.swift in Sources */,
 				52E0556F1E24FD19006E2C35 /* ACPViewController.swift in Sources */,
 				52E352671E1F4CE300115446 /* HttpFileTransferManager.swift in Sources */,

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LocalFilesViewController : SlidableViewController, UITableViewDataSource, UITableViewDelegate{
+class LocalFilesViewController : SlidableViewController, UITableViewDataSource, UITableViewDelegate, MoveFileDelegate{
     
     @IBOutlet weak var tableView : UITableView?
     @IBOutlet weak var menu : ACPScrollMenu?
@@ -25,7 +25,10 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
             
             self.plusBtn?.isHidden = self.isEdit
             
+            self.backbutton?.isEnabled = !self.isEdit
+            
             if self.isEdit == true{
+                
                 
                 self.setupMenuItems()
                 self.showEditMenu(anim: true)
@@ -82,6 +85,8 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
         }
         
         self.setupMenuItems()
+        
+        self.ReloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -93,7 +98,7 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
         super.viewDidAppear(animated)
         
         
-        self.ReloadData()
+        
  
         
         //we refresh back button
@@ -148,6 +153,11 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
     }
     
     func onBackToParent(){
+        
+        if isEdit{
+            
+            self.deselectAllData()
+        }
         
         LocalFileManager.shareInstance.backToParent { result in
             
@@ -432,6 +442,42 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
         
     }
     
+    //MARK:MoveFileDelegate
+    func onCancel() {
+        
+    }
+    
+    func onDestinationPathPicked(path: String) {
+        
+        var filePaths : [String] = Array<String>()
+        
+        for selected in self.selectedData{
+            
+            filePaths.append(selected.FilePath)
+        }
+        
+        LocalFileManager.shareInstance.moveFiles(filePaths: filePaths, destinationPath: path, fileMoved: { oldPath, newPath in
+            
+            
+            }, complete:{error in
+        
+                if error == nil{
+                    
+                    self.ReloadData()
+                }
+                else{
+                    
+                    switch error!{
+                    case .moveFileError(_):
+                        self.presentErrorAlert(title: "Error", msg: "Unable to move files")
+                        break
+                    default:
+                        break
+                    }
+                }
+        })
+    }
+    
     //MARK:Setup ACPScrollMenu items
     func setupMenuItems() {
         
@@ -646,7 +692,14 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
                 
                 let moveToAction = UIAlertAction(title: "Move To", style: .default, handler: { action in
                     
+                    var files : [String] = Array<String>()
                     
+                    for selected in self.selectedData{
+                        
+                        files.append(selected.FilePath)
+                    }
+                    
+                    MoveFileController.presentInViewController(inController: self, _delegate: self, movedfiles: files)
                 })
                 
                 let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
