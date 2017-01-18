@@ -10,6 +10,7 @@
 		264F3B172FF8E4163B62AE42 /* Pods_NeatDriveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3A628776E25F8C6D844FC85 /* Pods_NeatDriveUITests.framework */; };
 		520E6B651E2E11CE00BB2A9A /* SystemFolderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520E6B641E2E11CE00BB2A9A /* SystemFolderManager.swift */; };
 		520E6B671E2E127C00BB2A9A /* SystemFolderList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 520E6B661E2E127C00BB2A9A /* SystemFolderList.plist */; };
+		520E6B691E2EFDE000BB2A9A /* MoveFileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520E6B681E2EFDE000BB2A9A /* MoveFileCell.swift */; };
 		521B3DB21E237C8A0053EAAE /* FileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521B3DB11E237C8A0053EAAE /* FileCell.swift */; };
 		52391D561E1B30FF00D23D94 /* CloudServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52391D551E1B30FF00D23D94 /* CloudServiceViewController.swift */; };
 		52391D591E1B318A00D23D94 /* FileShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52391D581E1B318A00D23D94 /* FileShareViewController.swift */; };
@@ -79,6 +80,7 @@
 		3CF1410B986EABFEE2704EBB /* Pods-NeatDriveUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeatDriveUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NeatDriveUITests/Pods-NeatDriveUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		520E6B641E2E11CE00BB2A9A /* SystemFolderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemFolderManager.swift; sourceTree = "<group>"; };
 		520E6B661E2E127C00BB2A9A /* SystemFolderList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SystemFolderList.plist; sourceTree = "<group>"; };
+		520E6B681E2EFDE000BB2A9A /* MoveFileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveFileCell.swift; sourceTree = "<group>"; };
 		521B3DB11E237C8A0053EAAE /* FileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileCell.swift; sourceTree = "<group>"; };
 		52391D551E1B30FF00D23D94 /* CloudServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudServiceViewController.swift; sourceTree = "<group>"; };
 		52391D581E1B318A00D23D94 /* FileShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileShareViewController.swift; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				52F907BE1E2DAFD30019C2B9 /* MoveFileController.swift */,
+				520E6B681E2EFDE000BB2A9A /* MoveFileCell.swift */,
 			);
 			name = MoveFile;
 			sourceTree = "<group>";
@@ -721,6 +724,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				520E6B691E2EFDE000BB2A9A /* MoveFileCell.swift in Sources */,
 				52E3525E1E1F37B800115446 /* WifiThirdSlide.swift in Sources */,
 				52391D591E1B318A00D23D94 /* FileShareViewController.swift in Sources */,
 				52E0556D1E24FCFC006E2C35 /* ACPScrollMenu.m in Sources */,

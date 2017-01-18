@@ -239,11 +239,11 @@ class MoveFileController : UIViewController, UITableViewDelegate, UITableViewDat
         
         let cellId = "cell"
         
-        var cell = tableView.dequeueReusableCell(withIdentifier: cellId)
+        var cell : MoveFileCell? = tableView.dequeueReusableCell(withIdentifier: cellId) as? MoveFileCell
         
         if cell == nil{
             
-            cell = UITableViewCell(style: .default, reuseIdentifier: cellId)
+            cell = MoveFileCell(style: .default, reuseIdentifier: cellId)
         }
         
         let folder = self.folders?[indexPath.row]
