@@ -235,7 +235,11 @@ class CloudFileViewController : SlidableViewController, UITableViewDataSource, U
         }
         else{
             
-            let localFilePath = (documentPath() as NSString).appendingPathComponent(item.name)
+            //let localFilePath = (documentPath() as NSString).appendingPathComponent(item.name)
+            
+            let systemDownloadPath = SystemFolderManager.shareInstance.systemFolderPath(folderName: sysDownloadFolder)
+            
+            let localFilePath = (systemDownloadPath as NSString).appendingPathComponent(item.name)
             
             CloudDriveManager.shareInstance.downloadFileWith(metadata: item, localPath: localFilePath, resultHandler: { task, error in
                 

@@ -25,10 +25,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuItem" rowHeight="72" id="iTl-lV-MKL" customClass="MenuItemCell" customModule="NeatDrive" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="72"/>
+                                        <rect key="frame" x="0.0" y="28" width="1000" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iTl-lV-MKL" id="VgG-hB-zdw">
-                                            <frame key="frameInset" width="375" height="71.5"/>
+                                            <frame key="frameInset" width="1000" height="71.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHq-h1-BGz">
@@ -99,15 +99,157 @@
                         <viewControllerLayoutGuide type="bottom" id="v0h-kq-QAp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wN2-gm-Skb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vmp-J3-Elj" customClass="ACPScrollMenu">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="coq-Xx-6Nu">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FileCell" rowHeight="71" id="1u5-Mo-QnC" customClass="FileCell" customModule="NeatDrive" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="71"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1u5-Mo-QnC" id="MVw-Ai-8Rd">
+                                            <frame key="frameInset" width="375" height="70.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="46w-NF-aiO">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="46w-NF-aiO" secondAttribute="height" multiplier="1:1" id="rOg-70-5ec"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdl-qj-5dz">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mo-My-cZ5">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.60999599358974366" green="0.60999599358974366" blue="0.60999599358974366" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OIa-we-AQQ" customClass="CircleView" customModule="NeatDrive" customModuleProvider="target">
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="OIa-we-AQQ" secondAttribute="height" multiplier="1:1" id="MAf-2l-CPe"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="margin">
+                                                            <real key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="outterRingWith">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="innerGap">
+                                                            <real key="value" value="3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="46w-NF-aiO" firstAttribute="centerY" secondItem="MVw-Ai-8Rd" secondAttribute="centerY" id="3df-Ia-tqD"/>
+                                                <constraint firstItem="hdl-qj-5dz" firstAttribute="leading" secondItem="46w-NF-aiO" secondAttribute="trailing" constant="7.5" id="4wI-8s-CpK"/>
+                                                <constraint firstItem="46w-NF-aiO" firstAttribute="top" secondItem="MVw-Ai-8Rd" secondAttribute="topMargin" id="99s-au-Tsm"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="1mo-My-cZ5" secondAttribute="trailing" id="Hgj-Wx-IhH"/>
+                                                <constraint firstItem="46w-NF-aiO" firstAttribute="bottom" secondItem="MVw-Ai-8Rd" secondAttribute="bottomMargin" id="Vmd-tf-zFb"/>
+                                                <constraint firstItem="OIa-we-AQQ" firstAttribute="top" secondItem="MVw-Ai-8Rd" secondAttribute="topMargin" id="WUc-HV-7us"/>
+                                                <constraint firstItem="1mo-My-cZ5" firstAttribute="bottom" secondItem="MVw-Ai-8Rd" secondAttribute="bottomMargin" id="cff-h6-cY1"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="hdl-qj-5dz" secondAttribute="trailing" id="d4e-o4-P5x"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="OIa-we-AQQ" secondAttribute="bottom" id="hD0-76-wLh"/>
+                                                <constraint firstItem="1mo-My-cZ5" firstAttribute="leading" secondItem="hdl-qj-5dz" secondAttribute="leading" id="jOa-I8-baR"/>
+                                                <constraint firstItem="OIa-we-AQQ" firstAttribute="leading" secondItem="MVw-Ai-8Rd" secondAttribute="leadingMargin" id="op8-62-U7W"/>
+                                                <constraint firstItem="46w-NF-aiO" firstAttribute="leading" secondItem="OIa-we-AQQ" secondAttribute="trailing" constant="1" id="qEd-Jq-cET"/>
+                                                <constraint firstItem="hdl-qj-5dz" firstAttribute="centerY" secondItem="46w-NF-aiO" secondAttribute="centerY" id="t5y-WH-s40"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="iconImage" destination="46w-NF-aiO" id="gdj-cM-A3A"/>
+                                            <outlet property="leftConstraint" destination="op8-62-U7W" id="G5U-bn-wQa"/>
+                                            <outlet property="selectMark" destination="OIa-we-AQQ" id="bb5-yM-pSb"/>
+                                            <outlet property="subtitleLabel" destination="1mo-My-cZ5" id="s8x-9H-7Xi"/>
+                                            <outlet property="titleLabel" destination="hdl-qj-5dz" id="Z4c-Vq-ha0"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Sc8-TX-c9x" id="fvb-er-Fny"/>
+                                    <outlet property="delegate" destination="Sc8-TX-c9x" id="n8S-N0-sBx"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v49-bL-cnx">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="onPlusTap" destination="Sc8-TX-c9x" eventType="touchUpInside" id="Mjb-U0-RTS"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vmp-J3-Elj" firstAttribute="height" secondItem="wN2-gm-Skb" secondAttribute="height" multiplier="1:6" id="4wK-ss-k2L"/>
+                            <constraint firstItem="Vmp-J3-Elj" firstAttribute="leading" secondItem="wN2-gm-Skb" secondAttribute="leading" id="8NO-MO-yz4"/>
+                            <constraint firstAttribute="trailing" secondItem="coq-Xx-6Nu" secondAttribute="trailing" id="Iwq-Wq-40W"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="v49-bL-cnx" secondAttribute="trailing" multiplier="1.1:1" constant="1" id="Q4G-Ad-YIz"/>
+                            <constraint firstItem="Vmp-J3-Elj" firstAttribute="top" secondItem="coq-Xx-6Nu" secondAttribute="bottom" id="YcS-VS-NR0"/>
+                            <constraint firstItem="coq-Xx-6Nu" firstAttribute="top" secondItem="jMg-qE-Tno" secondAttribute="bottom" id="aJW-53-dFI"/>
+                            <constraint firstItem="v49-bL-cnx" firstAttribute="bottom" secondItem="coq-Xx-6Nu" secondAttribute="bottom" multiplier="0.9" id="dkO-9r-DRz"/>
+                            <constraint firstAttribute="trailing" secondItem="Vmp-J3-Elj" secondAttribute="trailing" id="iKp-5d-jIA"/>
+                            <constraint firstItem="coq-Xx-6Nu" firstAttribute="leading" secondItem="wN2-gm-Skb" secondAttribute="leading" id="vLo-BJ-T2d"/>
+                            <constraint firstItem="v0h-kq-QAp" firstAttribute="top" secondItem="Vmp-J3-Elj" secondAttribute="bottom" constant="-100" id="xfa-wr-Cgu"/>
+                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="H3R-Id-cSV"/>
+                    <connections>
+                        <outlet property="menu" destination="Vmp-J3-Elj" id="Ydy-U3-1Ne"/>
+                        <outlet property="menuBottomConstraint" destination="xfa-wr-Cgu" id="gQM-T3-vya"/>
+                        <outlet property="plusBtn" destination="v49-bL-cnx" id="ghd-OU-hFW"/>
+                        <outlet property="tableView" destination="coq-Xx-6Nu" id="fiV-0L-eOE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x1i-b1-ZTB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1310" y="-1392"/>
+            <point key="canvasLocation" x="1309.5999999999999" y="-1392.0539730134933"/>
+        </scene>
+        <!--Move File Controller-->
+        <scene sceneID="kdv-vp-evI">
+            <objects>
+                <viewController id="SqN-PH-H1c" customClass="MoveFileController" customModule="NeatDrive" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G6e-Ch-bGI"/>
+                        <viewControllerLayoutGuide type="bottom" id="F8V-AO-qvU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xCO-sO-lhd">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4A0-6C-uhs">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="SqN-PH-H1c" id="hYa-Zf-ady"/>
+                                    <outlet property="delegate" destination="SqN-PH-H1c" id="0NK-hi-sVP"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4A0-6C-uhs" firstAttribute="bottom" secondItem="F8V-AO-qvU" secondAttribute="top" id="5Lz-Gf-Wyc"/>
+                            <constraint firstItem="4A0-6C-uhs" firstAttribute="top" secondItem="G6e-Ch-bGI" secondAttribute="bottom" id="6kH-aK-RfM"/>
+                            <constraint firstAttribute="trailing" secondItem="4A0-6C-uhs" secondAttribute="trailing" id="EfG-aS-rrV"/>
+                            <constraint firstItem="4A0-6C-uhs" firstAttribute="leading" secondItem="xCO-sO-lhd" secondAttribute="leading" id="IOb-dw-f5Q"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="W14-Qu-OC3"/>
+                    <connections>
+                        <outlet property="tableView" destination="4A0-6C-uhs" id="mzH-ed-xaE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bEq-nc-Zwu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4312.8000000000002" y="-2507.4962518740631"/>
         </scene>
         <!--Cloud Service View Controller-->
         <scene sceneID="hxn-eR-uzg">
@@ -125,10 +267,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CloudItem" rowHeight="44" id="h95-Cf-uKP" customClass="CloudItemCell" customModule="NeatDrive" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="1000" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h95-Cf-uKP" id="f4G-2Z-HDP">
-                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <frame key="frameInset" width="1000" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pf-XJ-58V">
@@ -189,10 +331,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MetadataCell" rowHeight="65" id="imX-3b-0Jv" customClass="CloudMetadataCell" customModule="NeatDrive" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                                        <rect key="frame" x="0.0" y="28" width="1000" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="imX-3b-0Jv" id="lPY-xt-p5X">
-                                            <frame key="frameInset" width="375" height="64.5"/>
+                                            <frame key="frameInset" width="1000" height="64.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WyN-Zd-6HS">
@@ -252,7 +394,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="99" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uhb-YB-UqH">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DownloadCell" rowHeight="99" id="vB8-aj-RA6" customClass="DownloadCell" customModule="NeatDrive" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DownloadCell" rowHeight="99" id="vB8-aj-RA6" customClass="DownloadCell" customModule="NeatDrive" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="99"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vB8-aj-RA6" id="GCT-cB-FCw">
@@ -423,7 +565,7 @@
             <objects>
                 <navigationController storyboardIdentifier="FileShareNavVC" automaticallyAdjustsScrollViewInsets="NO" id="4JC-zK-AAL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="TEm-Ry-OGx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TEm-Ry-OGx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -747,7 +889,7 @@
             <objects>
                 <navigationController storyboardIdentifier="StorageStatusNavVC" automaticallyAdjustsScrollViewInsets="NO" id="OJZ-db-YAf" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="8fq-q6-SRt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8fq-q6-SRt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -815,5 +957,26 @@
             </objects>
             <point key="canvasLocation" x="582" y="1332"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iWO-uq-baS">
+            <objects>
+                <navigationController storyboardIdentifier="MoveFileNav" automaticallyAdjustsScrollViewInsets="NO" id="lYS-NL-7AX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zVW-Yz-vTU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SqN-PH-H1c" kind="relationship" relationship="rootViewController" id="2FH-SV-ha5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lqq-fX-CvW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3373.5999999999999" y="-2507.4962518740631"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="test" width="256" height="256"/>
+    </resources>
 </document>
