@@ -21,29 +21,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4PP-qz-5b9">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4PP-qz-5b9">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuItem" rowHeight="72" id="iTl-lV-MKL" customClass="MenuItemCell" customModule="NeatDrive" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="1000" height="72"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iTl-lV-MKL" id="VgG-hB-zdw">
-                                            <frame key="frameInset" width="1000" height="71.5"/>
+                                            <frame key="frameInset" width="375" height="72"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHq-h1-BGz">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHq-h1-BGz">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.82351762820512819" green="0.43352804739491529" blue="0.13101745387521802" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="boB-IL-rOG">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="boB-IL-rOG" secondAttribute="height" multiplier="1:1" id="RbC-DW-yZL"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="yHq-h1-BGz" firstAttribute="leading" secondItem="VgG-hB-zdw" secondAttribute="leading" constant="8" id="Czy-6a-w5f"/>
+                                                <constraint firstItem="boB-IL-rOG" firstAttribute="top" secondItem="VgG-hB-zdw" secondAttribute="topMargin" id="6QM-Rf-Fvj"/>
+                                                <constraint firstItem="boB-IL-rOG" firstAttribute="bottom" secondItem="VgG-hB-zdw" secondAttribute="bottomMargin" id="CFR-18-Wqa"/>
+                                                <constraint firstItem="boB-IL-rOG" firstAttribute="leading" secondItem="VgG-hB-zdw" secondAttribute="leadingMargin" id="Fev-vM-oNa"/>
                                                 <constraint firstAttribute="trailing" secondItem="yHq-h1-BGz" secondAttribute="trailing" constant="8" id="P8l-LP-0WY"/>
+                                                <constraint firstItem="yHq-h1-BGz" firstAttribute="leading" secondItem="boB-IL-rOG" secondAttribute="trailing" constant="8" id="ZzO-PX-zcz"/>
                                                 <constraint firstAttribute="bottom" secondItem="yHq-h1-BGz" secondAttribute="bottom" constant="8" id="a1f-4o-ANS"/>
                                                 <constraint firstItem="yHq-h1-BGz" firstAttribute="top" secondItem="VgG-hB-zdw" secondAttribute="top" constant="8" id="la7-6J-Rre"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="titleLabel" destination="yHq-h1-BGz" id="fLi-ug-oI8"/>
                                         </connections>
@@ -55,7 +64,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="R2L-Xz-zOy" firstAttribute="top" secondItem="4PP-qz-5b9" secondAttribute="bottom" id="3uG-yz-Nxo"/>
                             <constraint firstItem="4PP-qz-5b9" firstAttribute="leading" secondItem="Yq8-4E-5CM" secondAttribute="leading" id="QQi-JY-p9Y"/>
@@ -112,7 +121,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1u5-Mo-QnC" id="MVw-Ai-8Rd">
-                                            <frame key="frameInset" width="375" height="70.5"/>
+                                            <frame key="frameInset" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="46w-NF-aiO">
@@ -267,10 +276,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CloudItem" rowHeight="44" id="h95-Cf-uKP" customClass="CloudItemCell" customModule="NeatDrive" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="1000" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h95-Cf-uKP" id="f4G-2Z-HDP">
-                                            <frame key="frameInset" width="1000" height="43.5"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pf-XJ-58V">
@@ -331,10 +340,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MetadataCell" rowHeight="65" id="imX-3b-0Jv" customClass="CloudMetadataCell" customModule="NeatDrive" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="1000" height="65"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="imX-3b-0Jv" id="lPY-xt-p5X">
-                                            <frame key="frameInset" width="1000" height="64.5"/>
+                                            <frame key="frameInset" width="375" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WyN-Zd-6HS">
@@ -394,11 +403,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="99" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uhb-YB-UqH">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DownloadCell" rowHeight="99" id="vB8-aj-RA6" customClass="DownloadCell" customModule="NeatDrive" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DownloadCell" rowHeight="99" id="vB8-aj-RA6" customClass="DownloadCell" customModule="NeatDrive" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="99"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vB8-aj-RA6" id="GCT-cB-FCw">
-                                            <frame key="frameInset" width="375" height="98.5"/>
+                                            <frame key="frameInset" width="375" height="98"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MS2-Yu-6st">
@@ -565,7 +574,7 @@
             <objects>
                 <navigationController storyboardIdentifier="FileShareNavVC" automaticallyAdjustsScrollViewInsets="NO" id="4JC-zK-AAL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TEm-Ry-OGx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="TEm-Ry-OGx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -889,7 +898,7 @@
             <objects>
                 <navigationController storyboardIdentifier="StorageStatusNavVC" automaticallyAdjustsScrollViewInsets="NO" id="OJZ-db-YAf" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8fq-q6-SRt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="8fq-q6-SRt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
