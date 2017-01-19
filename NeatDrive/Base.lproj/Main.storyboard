@@ -8,6 +8,11 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Menu View Controller-->
         <scene sceneID="LhD-AR-0oA">
@@ -21,39 +26,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4PP-qz-5b9">
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4PP-qz-5b9">
+                                <color key="backgroundColor" red="0.16470588235294117" green="0.16470588235294117" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuItem" rowHeight="72" id="iTl-lV-MKL" customClass="MenuItemCell" customModule="NeatDrive" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="72"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuItem" rowHeight="68" id="iTl-lV-MKL" customClass="MenuItemCell" customModule="NeatDrive" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iTl-lV-MKL" id="VgG-hB-zdw">
-                                            <frame key="frameInset" width="375" height="72"/>
+                                            <frame key="frameInset" width="375" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHq-h1-BGz">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.82351762820512819" green="0.43352804739491529" blue="0.13101745387521802" alpha="1" colorSpace="calibratedRGB"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" All Files" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="yHq-h1-BGz">
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="21"/>
+                                                    <color key="textColor" red="0.92156862745098034" green="0.3529411764705882" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="boB-IL-rOG">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="boB-IL-rOG">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="boB-IL-rOG" secondAttribute="height" multiplier="1:1" id="RbC-DW-yZL"/>
+                                                        <constraint firstAttribute="width" secondItem="boB-IL-rOG" secondAttribute="height" multiplier="1:1" id="0qh-k7-OLw"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="boB-IL-rOG" firstAttribute="top" secondItem="VgG-hB-zdw" secondAttribute="topMargin" id="6QM-Rf-Fvj"/>
-                                                <constraint firstItem="boB-IL-rOG" firstAttribute="bottom" secondItem="VgG-hB-zdw" secondAttribute="bottomMargin" id="CFR-18-Wqa"/>
-                                                <constraint firstItem="boB-IL-rOG" firstAttribute="leading" secondItem="VgG-hB-zdw" secondAttribute="leadingMargin" id="Fev-vM-oNa"/>
+                                                <constraint firstItem="boB-IL-rOG" firstAttribute="height" secondItem="yHq-h1-BGz" secondAttribute="height" id="3aj-D3-npI"/>
+                                                <constraint firstItem="yHq-h1-BGz" firstAttribute="leading" secondItem="boB-IL-rOG" secondAttribute="trailing" constant="8" id="B08-nN-vx3"/>
                                                 <constraint firstAttribute="trailing" secondItem="yHq-h1-BGz" secondAttribute="trailing" constant="8" id="P8l-LP-0WY"/>
-                                                <constraint firstItem="yHq-h1-BGz" firstAttribute="leading" secondItem="boB-IL-rOG" secondAttribute="trailing" constant="8" id="ZzO-PX-zcz"/>
-                                                <constraint firstAttribute="bottom" secondItem="yHq-h1-BGz" secondAttribute="bottom" constant="8" id="a1f-4o-ANS"/>
-                                                <constraint firstItem="yHq-h1-BGz" firstAttribute="top" secondItem="VgG-hB-zdw" secondAttribute="top" constant="8" id="la7-6J-Rre"/>
+                                                <constraint firstAttribute="bottom" secondItem="yHq-h1-BGz" secondAttribute="bottom" constant="16" id="a1f-4o-ANS"/>
+                                                <constraint firstItem="boB-IL-rOG" firstAttribute="leading" secondItem="VgG-hB-zdw" secondAttribute="leadingMargin" id="gZ5-fq-hrf"/>
+                                                <constraint firstItem="yHq-h1-BGz" firstAttribute="top" secondItem="VgG-hB-zdw" secondAttribute="top" constant="16" id="la7-6J-Rre"/>
+                                                <constraint firstItem="boB-IL-rOG" firstAttribute="centerY" secondItem="yHq-h1-BGz" secondAttribute="centerY" id="tnJ-SU-98g"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.16470588235294117" green="0.16470588235294117" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
+                                            <outlet property="imageIconView" destination="boB-IL-rOG" id="Goh-RJ-rvs"/>
                                             <outlet property="titleLabel" destination="yHq-h1-BGz" id="fLi-ug-oI8"/>
                                         </connections>
                                     </tableViewCell>

@@ -48,11 +48,11 @@ class MenuViewController : UIViewController, UITableViewDataSource, UITableViewD
             self.menuItems = Array<MenuItem>()
         }
         
-        self.menuItems?.append(MenuItem(iconImageName: "", itemTitle: "All Files", storyboardID: "LocalFilesNavVC"))
-        self.menuItems?.append(MenuItem(iconImageName: "", itemTitle: "Cloud Services", storyboardID: "CloudServiceNavVC"))
-        self.menuItems?.append(MenuItem(iconImageName: "", itemTitle: "File share", storyboardID: "FileShareNavVC"))
-        self.menuItems?.append(MenuItem(iconImageName: "", itemTitle: "Passcode", storyboardID: "PasscodeNavVC"))
-        self.menuItems?.append(MenuItem(iconImageName: "", itemTitle: "Storage Status", storyboardID: "StorageStatusNavVC"))
+        self.menuItems?.append(MenuItem(iconImageName: "SideMenu-AllFiles", itemTitle: "All Files", storyboardID: "LocalFilesNavVC"))
+        self.menuItems?.append(MenuItem(iconImageName: "SideMenu-CloudService", itemTitle: "Cloud Services", storyboardID: "CloudServiceNavVC"))
+        self.menuItems?.append(MenuItem(iconImageName: "SideMenu-FileShare", itemTitle: "File share", storyboardID: "FileShareNavVC"))
+        self.menuItems?.append(MenuItem(iconImageName: "SideMenu-Passcode", itemTitle: "Passcode", storyboardID: "PasscodeNavVC"))
+        self.menuItems?.append(MenuItem(iconImageName: "SideMenu-StorageStatus", itemTitle: "Storage Status", storyboardID: "StorageStatusNavVC"))
     }
     
     //MARK:talbe data source
@@ -79,8 +79,14 @@ class MenuViewController : UIViewController, UITableViewDataSource, UITableViewD
         }
         
         cell?.titleLabel?.text = item.itemTitle
+        cell?.imageIconView?.image = UIImage(named: item.iconImageName)
         
         return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 68
     }
     
     //MARK:table delegate

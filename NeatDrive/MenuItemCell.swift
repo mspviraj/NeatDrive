@@ -12,4 +12,5 @@ import UIKit
 class MenuItemCell : UITableViewCell{
     
     @IBOutlet weak var titleLabel : UILabel?
+    @IBOutlet weak var imageIconView : UIImageView?
 }
