@@ -53,6 +53,8 @@ class MenuViewController : UIViewController, UITableViewDataSource, UITableViewD
         self.menuItems?.append(MenuItem(iconImageName: "SideMenu-FileShare", itemTitle: "File share", storyboardID: "FileShareNavVC"))
         self.menuItems?.append(MenuItem(iconImageName: "SideMenu-Passcode", itemTitle: "Passcode", storyboardID: "PasscodeNavVC"))
         self.menuItems?.append(MenuItem(iconImageName: "SideMenu-StorageStatus", itemTitle: "Storage Status", storyboardID: "StorageStatusNavVC"))
+        self.menuItems?.append(MenuItem(iconImageName: "SideMenu-About", itemTitle: "About", storyboardID: "AboutNavVC"))
+        self.menuItems?.append(MenuItem(iconImageName: "SideMenu-ShareUs", itemTitle: "Share Us", storyboardID: "ShareUsNavVC"))
     }
     
     //MARK:talbe data source

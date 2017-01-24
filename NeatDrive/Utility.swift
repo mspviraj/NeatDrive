@@ -80,6 +80,22 @@ public func documentPath() -> String{
     return documentsPath
 }
 
+public func snapshotOfView(inView : UIView, afterScreenUpdate : Bool) -> UIView{
+    
+    UIGraphicsBeginImageContextWithOptions(inView.bounds.size, false, UIScreen.main.scale)
+    
+    inView.drawHierarchy(in: inView.bounds, afterScreenUpdates: afterScreenUpdate)
+    
+    let image = UIGraphicsGetImageFromCurrentImageContext()!
+    UIGraphicsEndImageContext()
+    
+    let snapshot = UIView()
+    snapshot.bounds = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
+    snapshot.addSubview(UIImageView(image: image))
+    
+    return snapshot
+}
+
 extension UIColor {
     convenience init(red: Int, green: Int, blue: Int) {
         assert(red >= 0 && red <= 255, "Invalid red component")

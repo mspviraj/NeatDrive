@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.0.1)
   - AppAuth (0.7.1)
+  - BCGenieEffect (1.1)
   - BetterSegmentedControl (0.5)
   - ECSlidingViewController (2.0.3)
   - GCDWebServer/Core (3.0)
@@ -27,6 +28,7 @@ PODS:
   - UICircularProgressRing (1.1.6)
 
 DEPENDENCIES:
+  - BCGenieEffect
   - BetterSegmentedControl
   - ECSlidingViewController
   - GCDWebServer/WebUploader (= 3.0)
@@ -40,6 +42,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   AppAuth: c56d352b0d50bb34dbb302d7ba50b20aa6b6ae89
+  BCGenieEffect: 3efb235716f121caa6b26040bfd0ae11e1bae4b4
   BetterSegmentedControl: db74c56602e418e9eca8f6340e0ed0a7215f5f7c
   ECSlidingViewController: 6485c14f23b4487e9946535421ca8f111f86cc53
   GCDWebServer: 6b414efadd88124f40170513afac08e94e9a9f56
@@ -51,6 +54,6 @@ SPEC CHECKSUMS:
   SwiftyDropbox: dfcd4d308d32d74729255b48833db61acdfb9c23
   UICircularProgressRing: 892adf48ea0bdc218057c4e62c5e3a8609bd5b1c
 
-PODFILE CHECKSUM: 8e1ee2f9250f4045faede1fda650610cb7e533e6
+PODFILE CHECKSUM: f119292f10ec1a59616530c5ffdd8dc2646ebf0d
 
 COCOAPODS: 1.1.0.rc.3

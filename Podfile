@@ -19,6 +19,8 @@ target 'NeatDrive' do
   pod 'BetterSegmentedControl'
   
   pod 'GCDWebServer/WebUploader', '3.0'
+  
+  pod 'BCGenieEffect'
 
   # Pods for NeatDrive
 

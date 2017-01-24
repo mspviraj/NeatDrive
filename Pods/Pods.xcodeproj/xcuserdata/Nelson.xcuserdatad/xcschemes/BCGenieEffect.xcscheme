@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '6EF1F1C809E6B1C83ACA34475D9B0AD6'
-               BlueprintName = 'SwiftyDropbox'
+               BlueprintIdentifier = '053E8C2729DAE3D55795BFF36D717934'
+               BlueprintName = 'BCGenieEffect'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SwiftyDropbox.framework'>
+               BuildableName = 'BCGenieEffect.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

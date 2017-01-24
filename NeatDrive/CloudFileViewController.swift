@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import BCGenieEffect
 
 class CloudFileViewController : SlidableViewController, UITableViewDataSource, UITableViewDelegate{
     
@@ -263,6 +264,30 @@ class CloudFileViewController : SlidableViewController, UITableViewDataSource, U
                     controller.addAction(cancelAction)
                     
                     self.present(controller, animated: true, completion: nil)
+                    
+                }
+                else{
+                    
+                    /**
+                     Animate cell to download button
+                    */
+                    let cell = tableView.cellForRow(at: indexPath)
+                    
+                    let snapshot = snapshotOfView(inView: cell!, afterScreenUpdate: false)
+                    
+                    let navBarBounds = self.navigationController?.navigationBar.bounds
+                    let destRect = CGRect(x: (navBarBounds?.width)!-44, y: 0, width: 44, height: 5)
+                    
+                    let fixOrigin = CGPoint(x: (cell?.frame.origin.x)!, y: (cell?.frame.origin.y)! - tableView.contentOffset.y)
+                    let position = self.view.convert(fixOrigin, to: self.view)
+                    
+                    snapshot.frame.origin = position
+                    self.view.addSubview(snapshot)
+                    
+                    snapshot.genieInTransition(withDuration: 0.7, destinationRect: destRect, destinationEdge: .bottom, completion: {
+                        
+                        snapshot.removeFromSuperview()
+                    })
                     
                 }
             })
