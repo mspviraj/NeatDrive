@@ -205,11 +205,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="v49-bL-cnx" firstAttribute="bottom" secondItem="v0h-kq-QAp" secondAttribute="top" multiplier="0.98" id="3jg-MW-Jko"/>
+                            <constraint firstItem="v49-bL-cnx" firstAttribute="bottom" secondItem="v0h-kq-QAp" secondAttribute="top" multiplier="0.95" id="3jg-MW-Jko"/>
                             <constraint firstItem="Vmp-J3-Elj" firstAttribute="height" secondItem="wN2-gm-Skb" secondAttribute="height" multiplier="1:6" id="4wK-ss-k2L"/>
                             <constraint firstItem="Vmp-J3-Elj" firstAttribute="leading" secondItem="wN2-gm-Skb" secondAttribute="leading" id="8NO-MO-yz4"/>
                             <constraint firstAttribute="trailing" secondItem="coq-Xx-6Nu" secondAttribute="trailing" id="Iwq-Wq-40W"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="v49-bL-cnx" secondAttribute="trailing" multiplier="1:1" constant="1" id="Q4G-Ad-YIz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="v49-bL-cnx" secondAttribute="trailing" multiplier="1.05:1" constant="1" id="Q4G-Ad-YIz"/>
                             <constraint firstItem="v49-bL-cnx" firstAttribute="width" secondItem="coq-Xx-6Nu" secondAttribute="width" multiplier="1:7" id="TOB-4T-VOH"/>
                             <constraint firstItem="Vmp-J3-Elj" firstAttribute="top" secondItem="coq-Xx-6Nu" secondAttribute="bottom" id="YcS-VS-NR0"/>
                             <constraint firstItem="coq-Xx-6Nu" firstAttribute="top" secondItem="jMg-qE-Tno" secondAttribute="bottom" id="aJW-53-dFI"/>
