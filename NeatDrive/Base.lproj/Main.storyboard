@@ -127,7 +127,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1u5-Mo-QnC" id="MVw-Ai-8Rd">
-                                            <frame key="frameInset" width="375" height="70.5"/>
+                                            <frame key="frameInset" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="46w-NF-aiO">
@@ -193,9 +193,11 @@
                                     <outlet property="delegate" destination="Sc8-TX-c9x" id="n8S-N0-sBx"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v49-bL-cnx">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                                <state key="normal" title="+"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v49-bL-cnx">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="v49-bL-cnx" secondAttribute="height" multiplier="1:1" id="2MR-vj-zce"/>
+                                </constraints>
+                                <state key="normal" image="Icon-Plus"/>
                                 <connections>
                                     <action selector="onPlusTap" destination="Sc8-TX-c9x" eventType="touchUpInside" id="Mjb-U0-RTS"/>
                                 </connections>
@@ -203,13 +205,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="v49-bL-cnx" firstAttribute="bottom" secondItem="v0h-kq-QAp" secondAttribute="top" multiplier="0.98" id="3jg-MW-Jko"/>
                             <constraint firstItem="Vmp-J3-Elj" firstAttribute="height" secondItem="wN2-gm-Skb" secondAttribute="height" multiplier="1:6" id="4wK-ss-k2L"/>
                             <constraint firstItem="Vmp-J3-Elj" firstAttribute="leading" secondItem="wN2-gm-Skb" secondAttribute="leading" id="8NO-MO-yz4"/>
                             <constraint firstAttribute="trailing" secondItem="coq-Xx-6Nu" secondAttribute="trailing" id="Iwq-Wq-40W"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="v49-bL-cnx" secondAttribute="trailing" multiplier="1.1:1" constant="1" id="Q4G-Ad-YIz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="v49-bL-cnx" secondAttribute="trailing" multiplier="1:1" constant="1" id="Q4G-Ad-YIz"/>
+                            <constraint firstItem="v49-bL-cnx" firstAttribute="width" secondItem="coq-Xx-6Nu" secondAttribute="width" multiplier="1:7" id="TOB-4T-VOH"/>
                             <constraint firstItem="Vmp-J3-Elj" firstAttribute="top" secondItem="coq-Xx-6Nu" secondAttribute="bottom" id="YcS-VS-NR0"/>
                             <constraint firstItem="coq-Xx-6Nu" firstAttribute="top" secondItem="jMg-qE-Tno" secondAttribute="bottom" id="aJW-53-dFI"/>
-                            <constraint firstItem="v49-bL-cnx" firstAttribute="bottom" secondItem="coq-Xx-6Nu" secondAttribute="bottom" multiplier="0.9" id="dkO-9r-DRz"/>
                             <constraint firstAttribute="trailing" secondItem="Vmp-J3-Elj" secondAttribute="trailing" id="iKp-5d-jIA"/>
                             <constraint firstItem="coq-Xx-6Nu" firstAttribute="leading" secondItem="wN2-gm-Skb" secondAttribute="leading" id="vLo-BJ-T2d"/>
                             <constraint firstItem="v0h-kq-QAp" firstAttribute="top" secondItem="Vmp-J3-Elj" secondAttribute="bottom" constant="-100" id="xfa-wr-Cgu"/>
@@ -285,7 +288,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h95-Cf-uKP" id="f4G-2Z-HDP">
-                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pf-XJ-58V">
@@ -349,7 +352,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="imX-3b-0Jv" id="lPY-xt-p5X">
-                                            <frame key="frameInset" width="375" height="64.5"/>
+                                            <frame key="frameInset" width="375" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WyN-Zd-6HS">
@@ -413,7 +416,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="99"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vB8-aj-RA6" id="GCT-cB-FCw">
-                                            <frame key="frameInset" width="375" height="98.5"/>
+                                            <frame key="frameInset" width="375" height="98"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MS2-Yu-6st">
@@ -485,7 +488,7 @@
             <objects>
                 <navigationController storyboardIdentifier="LocalFilesNavVC" automaticallyAdjustsScrollViewInsets="NO" id="dU1-6R-aQI" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qcz-NQ-J6K">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Qcz-NQ-J6K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -503,7 +506,7 @@
             <objects>
                 <navigationController storyboardIdentifier="CloudServiceNavVC" automaticallyAdjustsScrollViewInsets="NO" id="VzC-vU-PjK" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8lB-KK-7aq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="8lB-KK-7aq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -580,7 +583,7 @@
             <objects>
                 <navigationController storyboardIdentifier="FileShareNavVC" automaticallyAdjustsScrollViewInsets="NO" id="4JC-zK-AAL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TEm-Ry-OGx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="TEm-Ry-OGx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -723,7 +726,7 @@
                         <viewControllerLayoutGuide type="bottom" id="V99-ld-21o"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2Fg-9i-nR0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="536.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -904,7 +907,7 @@
             <objects>
                 <navigationController storyboardIdentifier="StorageStatusNavVC" automaticallyAdjustsScrollViewInsets="NO" id="OJZ-db-YAf" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8fq-q6-SRt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="8fq-q6-SRt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -997,7 +1000,7 @@
             <objects>
                 <navigationController storyboardIdentifier="PasscodeNavVC" automaticallyAdjustsScrollViewInsets="NO" id="e7w-oi-9Bl" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ups-2B-6bt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ups-2B-6bt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1015,7 +1018,7 @@
             <objects>
                 <navigationController storyboardIdentifier="MoveFileNav" automaticallyAdjustsScrollViewInsets="NO" id="lYS-NL-7AX" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zVW-Yz-vTU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zVW-Yz-vTU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1033,7 +1036,7 @@
             <objects>
                 <navigationController storyboardIdentifier="AboutNavVC" automaticallyAdjustsScrollViewInsets="NO" id="Pxl-4N-lQ4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QNi-oF-DeL">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="QNi-oF-DeL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1051,7 +1054,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ShareUsNavVC" automaticallyAdjustsScrollViewInsets="NO" id="mUl-aL-U0I" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="V8v-ny-Laq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="V8v-ny-Laq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1066,6 +1069,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Icon-Plus" width="135" height="135"/>
         <image name="test" width="256" height="256"/>
     </resources>
 </document>

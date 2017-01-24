@@ -102,6 +102,11 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.plusBtn?.layer.shadowColor = UIColor(netHex: 0xd4d4d4).cgColor
+        self.plusBtn?.layer.shadowRadius = 3
+        self.plusBtn?.layer.shadowOpacity = 1
+        self.plusBtn?.layer.shadowOffset = CGSize(width: 0, height: 5)
+        self.plusBtn?.layer.masksToBounds = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
