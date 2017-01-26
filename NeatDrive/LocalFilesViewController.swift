@@ -78,17 +78,29 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
             }
         }
     }
+    
+    func getImageWithColor(color: UIColor, size: CGSize) -> UIImage {
+        let rect = CGRect(x:0, y:0, width:size.width, height:size.height)
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        color.setFill()
+        UIRectFill(rect)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return image
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "All Files"
         
+        //configuer search bar
         self.searchController.searchResultsUpdater = self
         self.searchController.delegate = self
         self.searchController.searchBar.delegate = self
         self.searchController.searchBar.placeholder = "What are you looking for?"
         self.searchController.dimsBackgroundDuringPresentation = true
+        
         self.definesPresentationContext = true
         self.tableView?.tableHeaderView = self.searchController.searchBar
         
@@ -140,6 +152,33 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
             self.atRoot = false
         }
         
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        //
+        //configure search bar UI
+        //
+        self.searchController.searchBar.backgroundColor = UIColor.clear
+        
+        var searchBarBackgroundSize: CGSize? = nil
+        
+        for view in (self.searchController.searchBar.subviews.last?.subviews)!{
+            
+            if view.isKind(of: NSClassFromString("UISearchBarBackground")!){
+                
+                searchBarBackgroundSize = view.bounds.size
+                break
+            }
+        }
+        
+        if searchBarBackgroundSize != nil{
+            
+            let image = imageWithBottomShadow(size: searchBarBackgroundSize!, imageColor: (self.tableView?.backgroundColor)!, shadowColor: UIColor(netHex: 0xd4d4d4), shadowHeight: (searchBarBackgroundSize?.height)! * (1/9))
+            
+            self.searchController.searchBar.backgroundImage = image
+        }
     }
     
     

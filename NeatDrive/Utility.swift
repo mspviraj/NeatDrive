@@ -96,6 +96,25 @@ public func snapshotOfView(inView : UIView, afterScreenUpdate : Bool) -> UIView{
     return snapshot
 }
 
+public func imageWithBottomShadow(size:CGSize, imageColor:UIColor, shadowColor:UIColor, shadowHeight:CGFloat) -> UIImage{
+    
+    let view : UIView = UIView(frame: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+    let shadowLayer = CAShapeLayer()
+    shadowLayer.frame = CGRect(x:0 , y: size.height - shadowHeight, width: size.width, height: shadowHeight)
+    shadowLayer.backgroundColor = shadowColor.cgColor
+    view.backgroundColor = imageColor
+    view.layer.addSublayer(shadowLayer)
+    
+    UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
+    
+    view.layer.render(in: UIGraphicsGetCurrentContext()!)
+    let image = UIGraphicsGetImageFromCurrentImageContext()
+    
+    UIGraphicsEndImageContext()
+    
+    return image!
+}
+
 extension UIColor {
     convenience init(red: Int, green: Int, blue: Int) {
         assert(red >= 0 && red <= 255, "Invalid red component")
