@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import DGElasticPullToRefresh
 
 class LocalFilesViewController : SlidableViewController, UITableViewDataSource, UITableViewDelegate, MoveFileDelegate, UISearchResultsUpdating, UISearchControllerDelegate, UISearchBarDelegate{
     
@@ -15,6 +16,8 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
     @IBOutlet weak var menu : ACPScrollMenu?
     @IBOutlet weak var menuBottomConstraint : NSLayoutConstraint?
     @IBOutlet weak var plusBtn : UIButton?
+    
+    let loadingView = DGElasticPullToRefreshLoadingViewCircle()
     
     private let searchController = UISearchController(searchResultsController: nil)
     
@@ -95,6 +98,17 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
         }
         
         self.setupMenuItems()
+        
+        //pull down refresh
+        self.loadingView.tintColor = UIColor.white
+        
+        self.tableView?.dg_addPullToRefreshWithActionHandler({ 
+            
+            self.ReloadData()
+            }, loadingView: self.loadingView)
+        
+        self.tableView?.dg_setPullToRefreshFillColor(UIColor(netHex: 0xeb5a27))
+        self.tableView?.dg_setPullToRefreshBackgroundColor((tableView?.backgroundColor)!)
         
         self.ReloadData()
     }
@@ -247,6 +261,9 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
             LocalFileManager.shareInstance.contentsInPath(path: LocalFileManager.shareInstance.currentPathString, complete: { result in
                 
                 self.processData(result: result)
+                
+                //cancel pull down refresh
+                self.tableView?.dg_stopLoading()
             })
         }
         else{
@@ -254,6 +271,9 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
             LocalFileManager.shareInstance.searchFile(path: LocalFileManager.shareInstance.currentPathString, keyword: self.searchController.searchBar.text!, deepSearch: true) { result in
                 
                 self.processData(result: result)
+                
+                //cancel pull down refresh
+                self.tableView?.dg_stopLoading()
             }
         }
         

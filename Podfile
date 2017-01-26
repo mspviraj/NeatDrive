@@ -23,6 +23,8 @@ target 'NeatDrive' do
   pod 'BCGenieEffect'
   
   pod 'JHChainableAnimations', '~> 1.3.0'
+  
+  pod 'DGElasticPullToRefresh'
 
   # Pods for NeatDrive
 
