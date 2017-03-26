@@ -18,8 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        //customize navigation bar
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().barTintColor = UIColor(netHex: 0xeb5a27)
+        
+        let attributes : [String:AnyObject] = [
+            NSForegroundColorAttributeName:UIColor.white,
+            NSFontAttributeName: UIFont(name: "Lato-Regular", size: 21)!
+        ]
+        
+        UINavigationBar.appearance().titleTextAttributes = attributes
+        
+        //init system folder manager
         _ = SystemFolderManager.shareInstance
         
+        //passcode check
         let dispatchTime = DispatchTime.now() + .seconds(0)
         DispatchQueue.main.asyncAfter(deadline: dispatchTime) {
             

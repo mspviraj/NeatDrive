@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import BCGenieEffect
+import JHChainableAnimations
 
 class CloudFileViewController : SlidableViewController, UITableViewDataSource, UITableViewDelegate{
     
@@ -53,7 +55,8 @@ class CloudFileViewController : SlidableViewController, UITableViewDataSource, U
         super.viewDidLoad()
         
         if self.downloadButton == nil{
-            self.downloadButton = UIBarButtonItem(title: "Download", style: .plain, target: self, action: #selector(CloudFileViewController.showDwonload))
+            //self.downloadButton = UIBarButtonItem(title: "Download", style: .plain, target: self, action: #selector(CloudFileViewController.showDwonload))
+            self.downloadButton = UIBarButtonItem(image: UIImage(named: "Icon-Download"), style: .plain, target: self, action: #selector(CloudFileViewController.showDwonload))
         }
         
         self.addRightButton(button: self.downloadButton!)
@@ -245,13 +248,16 @@ class CloudFileViewController : SlidableViewController, UITableViewDataSource, U
                 
                 if let err = error{
                     
-                    var errorMsg = ""
+                    let errorMsg = ""
                     
                     switch err{
                         
                     case .CloudDriveDownloadExist:
-                        errorMsg = "This file is already in download queue"
-                        break
+                        //errorMsg = "This file is already in download queue"
+                        let cell = tableView.cellForRow(at: indexPath)
+                        cell?.shake()
+                        return
+                        //break
                     default:
                         break
                     }
@@ -263,6 +269,35 @@ class CloudFileViewController : SlidableViewController, UITableViewDataSource, U
                     controller.addAction(cancelAction)
                     
                     self.present(controller, animated: true, completion: nil)
+                    
+                }
+                else{
+                    
+                    /**
+                     Animate cell fall down
+                    */
+                    let cell = tableView.cellForRow(at: indexPath)
+                    
+                    let snapshot = snapshotOfView(inView: cell!, afterScreenUpdate: false)
+                    
+                    
+                    let fixOrigin = CGPoint(x: (cell?.frame.origin.x)!, y: (cell?.frame.origin.y)! - tableView.contentOffset.y)
+                    let position = self.view.convert(fixOrigin, to: self.view)
+                    
+                    snapshot.frame.origin = position
+                    self.view.addSubview(snapshot)
+                    
+                    _ = snapshot.easeIn().anchorTopLeft().rotate()(45)?.easeBack().wait()(0.2)?.moveY()((self.tableView?.bounds.height)!)?.easeIn().makeOpacity()(0.4)?.animateWithCompletion()(1.0, {
+                    
+                        snapshot.removeFromSuperview()
+                    })
+                    
+                    /*
+                    snapshot.genieInTransition(withDuration: 0.7, destinationRect: destRect, destinationEdge: .bottom, completion: {
+                        
+                        snapshot.removeFromSuperview()
+                    })
+                    */
                     
                 }
             })

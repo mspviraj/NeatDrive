@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BE746F6BB1FE54E39D6D891172997CC4"
+               BlueprintIdentifier = "0212AEC6A756959BA3A35FAFE572BB77"
                BuildableName = "Pods_NeatDrive.framework"
                BlueprintName = "Pods-NeatDrive"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BE746F6BB1FE54E39D6D891172997CC4"
+            BlueprintIdentifier = "0212AEC6A756959BA3A35FAFE572BB77"
             BuildableName = "Pods_NeatDrive.framework"
             BlueprintName = "Pods-NeatDrive"
             ReferencedContainer = "container:Pods.xcodeproj">

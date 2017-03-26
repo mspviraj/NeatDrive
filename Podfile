@@ -19,6 +19,12 @@ target 'NeatDrive' do
   pod 'BetterSegmentedControl'
   
   pod 'GCDWebServer/WebUploader', '3.0'
+  
+  pod 'BCGenieEffect'
+  
+  pod 'JHChainableAnimations', '~> 1.3.0'
+  
+  pod 'DGElasticPullToRefresh'
 
   # Pods for NeatDrive
 

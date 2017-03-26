@@ -54,7 +54,9 @@ class SlidableViewController : UIViewController{
     
     private func setupLeftMenuButton(){
         
-        let leftMenuBtn = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(SlidableViewController.onLeftMenuButtonTapped(button:)))
+        //let leftMenuBtn = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(SlidableViewController.onLeftMenuButtonTapped(button:)))
+        
+        let leftMenuBtn = UIBarButtonItem(image: UIImage(named: "Icon-Menu"), style: .plain, target: self, action: #selector(SlidableViewController.onLeftMenuButtonTapped(button:)))
         
         self.navigationItem.leftBarButtonItems = [leftMenuBtn]
     }

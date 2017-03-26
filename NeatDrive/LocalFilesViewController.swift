@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import DGElasticPullToRefresh
 
 class LocalFilesViewController : SlidableViewController, UITableViewDataSource, UITableViewDelegate, MoveFileDelegate, UISearchResultsUpdating, UISearchControllerDelegate, UISearchBarDelegate{
     
@@ -15,6 +16,8 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
     @IBOutlet weak var menu : ACPScrollMenu?
     @IBOutlet weak var menuBottomConstraint : NSLayoutConstraint?
     @IBOutlet weak var plusBtn : UIButton?
+    
+    let loadingView = DGElasticPullToRefreshLoadingViewCircle()
     
     private let searchController = UISearchController(searchResultsController: nil)
     
@@ -75,17 +78,29 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
             }
         }
     }
+    
+    func getImageWithColor(color: UIColor, size: CGSize) -> UIImage {
+        let rect = CGRect(x:0, y:0, width:size.width, height:size.height)
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        color.setFill()
+        UIRectFill(rect)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return image
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "All Files"
         
+        //configuer search bar
         self.searchController.searchResultsUpdater = self
         self.searchController.delegate = self
         self.searchController.searchBar.delegate = self
         self.searchController.searchBar.placeholder = "What are you looking for?"
         self.searchController.dimsBackgroundDuringPresentation = true
+        
         self.definesPresentationContext = true
         self.tableView?.tableHeaderView = self.searchController.searchBar
         
@@ -96,12 +111,28 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
         
         self.setupMenuItems()
         
+        //pull down refresh
+        self.loadingView.tintColor = UIColor.white
+        
+        self.tableView?.dg_addPullToRefreshWithActionHandler({ 
+            
+            self.ReloadData()
+            }, loadingView: self.loadingView)
+        
+        self.tableView?.dg_setPullToRefreshFillColor(UIColor(netHex: 0xeb5a27))
+        self.tableView?.dg_setPullToRefreshBackgroundColor((tableView?.backgroundColor)!)
+        
         self.ReloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.plusBtn?.layer.shadowColor = UIColor(netHex: 0xd4d4d4).cgColor
+        self.plusBtn?.layer.shadowRadius = 3
+        self.plusBtn?.layer.shadowOpacity = 1
+        self.plusBtn?.layer.shadowOffset = CGSize(width: 0, height: 5)
+        self.plusBtn?.layer.masksToBounds = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -121,6 +152,33 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
             self.atRoot = false
         }
         
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        //
+        //configure search bar UI
+        //
+        self.searchController.searchBar.backgroundColor = UIColor.clear
+        
+        var searchBarBackgroundSize: CGSize? = nil
+        
+        for view in (self.searchController.searchBar.subviews.last?.subviews)!{
+            
+            if view.isKind(of: NSClassFromString("UISearchBarBackground")!){
+                
+                searchBarBackgroundSize = view.bounds.size
+                break
+            }
+        }
+        
+        if searchBarBackgroundSize != nil{
+            
+            let image = imageWithBottomShadow(size: searchBarBackgroundSize!, imageColor: (self.tableView?.backgroundColor)!, shadowColor: UIColor(netHex: 0xd4d4d4), shadowHeight: (searchBarBackgroundSize?.height)! * (1/9))
+            
+            self.searchController.searchBar.backgroundImage = image
+        }
     }
     
     
@@ -242,6 +300,9 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
             LocalFileManager.shareInstance.contentsInPath(path: LocalFileManager.shareInstance.currentPathString, complete: { result in
                 
                 self.processData(result: result)
+                
+                //cancel pull down refresh
+                self.tableView?.dg_stopLoading()
             })
         }
         else{
@@ -249,6 +310,9 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
             LocalFileManager.shareInstance.searchFile(path: LocalFileManager.shareInstance.currentPathString, keyword: self.searchController.searchBar.text!, deepSearch: true) { result in
                 
                 self.processData(result: result)
+                
+                //cancel pull down refresh
+                self.tableView?.dg_stopLoading()
             }
         }
         

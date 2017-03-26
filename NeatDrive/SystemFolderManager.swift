@@ -74,7 +74,7 @@ class SystemFolderManager : NSObject{
         
         if folderPath != nil{
             
-            return folderPath == path
+            return true
         }
         
         return false
