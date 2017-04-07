@@ -20,6 +20,8 @@
 		52391D6A1E1B45FA00D23D94 /* CloudFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52391D691E1B45FA00D23D94 /* CloudFileViewController.swift */; };
 		52391D731E1B784800D23D94 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52391D721E1B784800D23D94 /* Utility.swift */; };
 		52391D751E1B973E00D23D94 /* CloudMetadataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52391D741E1B973E00D23D94 /* CloudMetadataCell.swift */; };
+		5255A63D1E9758FA00989D86 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255A63C1E9758FA00989D86 /* AboutUsViewController.swift */; };
+		5255A6401E97599700989D86 /* ShareUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255A63F1E97599700989D86 /* ShareUsViewController.swift */; };
 		52DA66871E1BD22E0055F150 /* DropBoxDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA66841E1BD22E0055F150 /* DropBoxDrive.swift */; };
 		52DA66881E1BD22E0055F150 /* GoogleDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA66851E1BD22E0055F150 /* GoogleDrive.swift */; };
 		52DA66891E1BD22E0055F150 /* CloudDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA66861E1BD22E0055F150 /* CloudDrive.swift */; };
@@ -91,6 +93,8 @@
 		52391D691E1B45FA00D23D94 /* CloudFileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudFileViewController.swift; sourceTree = "<group>"; };
 		52391D721E1B784800D23D94 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		52391D741E1B973E00D23D94 /* CloudMetadataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudMetadataCell.swift; sourceTree = "<group>"; };
+		5255A63C1E9758FA00989D86 /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		5255A63F1E97599700989D86 /* ShareUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareUsViewController.swift; sourceTree = "<group>"; };
 		52DA66811E1BA3750055F150 /* NeatDrive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NeatDrive.entitlements; sourceTree = "<group>"; };
 		52DA66841E1BD22E0055F150 /* DropBoxDrive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropBoxDrive.swift; sourceTree = "<group>"; };
 		52DA66851E1BD22E0055F150 /* GoogleDrive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleDrive.swift; sourceTree = "<group>"; };
@@ -285,6 +289,22 @@
 			name = Utility;
 			sourceTree = "<group>";
 		};
+		5255A63B1E9758C200989D86 /* AboutUs */ = {
+			isa = PBXGroup;
+			children = (
+				5255A63C1E9758FA00989D86 /* AboutUsViewController.swift */,
+			);
+			name = AboutUs;
+			sourceTree = "<group>";
+		};
+		5255A63E1E97597800989D86 /* ShareUs */ = {
+			isa = PBXGroup;
+			children = (
+				5255A63F1E97599700989D86 /* ShareUsViewController.swift */,
+			);
+			name = ShareUs;
+			sourceTree = "<group>";
+		};
 		52DA66821E1BCFC50055F150 /* CloudFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -419,6 +439,8 @@
 				52E3524D1E1C9D3200115446 /* Passcode */,
 				52391D541E1B30E300D23D94 /* CloudService */,
 				52391D521E1B30AD00D23D94 /* LocalFiles */,
+				5255A63B1E9758C200989D86 /* AboutUs */,
+				5255A63E1E97597800989D86 /* ShareUs */,
 				52391D531E1B30C400D23D94 /* SlidableView */,
 				52E847861E1355BE004AAABE /* AppDelegate.swift */,
 				52E847881E1355BE004AAABE /* ViewController.swift */,
@@ -793,12 +815,14 @@
 				52DA668B1E1BD2480055F150 /* DownloadQueueViewController.swift in Sources */,
 				52DA66881E1BD22E0055F150 /* GoogleDrive.swift in Sources */,
 				52DA66871E1BD22E0055F150 /* DropBoxDrive.swift in Sources */,
+				5255A63D1E9758FA00989D86 /* AboutUsViewController.swift in Sources */,
 				52391D751E1B973E00D23D94 /* CloudMetadataCell.swift in Sources */,
 				52E3524F1E1C9D5200115446 /* PasscodeViewController.swift in Sources */,
 				52DA66891E1BD22E0055F150 /* CloudDrive.swift in Sources */,
 				52E352561E1F306C00115446 /* WifiViewController.swift in Sources */,
 				52E847871E1355BE004AAABE /* AppDelegate.swift in Sources */,
 				52E352531E1E1C4200115446 /* ContainerViewController.swift in Sources */,
+				5255A6401E97599700989D86 /* ShareUsViewController.swift in Sources */,
 				52391D601E1B41A000D23D94 /* CloudItemCell.swift in Sources */,
 				52F54BEF1E25FB6300136BA7 /* CircleView.swift in Sources */,
 				52E352511E1E1A4300115446 /* EmptySegue.swift in Sources */,
