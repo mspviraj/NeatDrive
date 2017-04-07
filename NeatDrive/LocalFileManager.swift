@@ -138,7 +138,10 @@ class LocalFileManager : NSObject{
                 
                 var content : [LocalFileMetadata] = Array<LocalFileMetadata>()
                 
-                for url in contentURLs{
+                for theUrl in contentURLs{
+                    
+                    //using standardized file URL to remove symlink eg. private/
+                    let url = theUrl.standardizedFileURL
                     
                     //is file or folder
                     var isDirectory : ObjCBool = false
