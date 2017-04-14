@@ -636,7 +636,8 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
         
         let arr : [ACPItem] = [
         
-            ACPItem(acpItem: nil, iconImage: nil, label: "Add Folder", andAction: { item in
+            //add folder item
+            ACPItem(acpItem: nil, iconImage: UIImage(named: "EditMenu-AddFolder"), label: "Add Folder", andAction: { item in
                 
                 print("add folder")
                 
@@ -707,7 +708,8 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
                 }
             }),
             
-            ACPItem(acpItem: nil, iconImage: nil, label: "Rename", andAction: { item in
+            //rename item
+            ACPItem(acpItem: nil, iconImage: UIImage(named: "EditMenu-Rename"), label: "Rename", andAction: { item in
                 
                 print("Re-name")
                 
@@ -780,7 +782,8 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
                 }
             }),
             
-            ACPItem(acpItem: nil, iconImage: nil, label: "Edit", andAction: { item in
+            //edit item
+            ACPItem(acpItem: nil, iconImage: UIImage(named: "EditMenu-EditFile"), label: "Edit", andAction: { item in
                 
                 print("Edit")
                 
@@ -889,7 +892,8 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
                 }
             }),
             
-            ACPItem(acpItem: nil, iconImage: nil, label: "Cancel Edit", andAction: { item in
+            //cancel edit item
+            ACPItem(acpItem: nil, iconImage: UIImage(named: "EditMenu-CancelEdit"), label: "Cancel Edit", andAction: { item in
                 
                 print("Cancel edit")
                 
