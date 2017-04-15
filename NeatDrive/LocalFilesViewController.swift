@@ -700,11 +700,13 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
                 
                 if enable {
                     
-                    item?.labelItem.textColor = UIColor.darkGray
+                    item?.labelItem.textColor = UIColor.init(netHex: 0x2a2a2a)
+
                 }
                 else{
                     
-                    item?.labelItem.textColor = UIColor.lightGray
+                    item?.labelItem.textColor = UIColor.init(netHex: 0xe9e9e9)
+
                 }
             }),
             
@@ -774,12 +776,12 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
                 
                 if enable {
                     
-                    item?.labelItem.textColor = UIColor.darkGray
+                    item?.labelItem.textColor = UIColor.init(netHex: 0x2a2a2a)
                     item?.iconImage.isHighlighted = true
                 }
                 else{
                     
-                    item?.labelItem.textColor = UIColor.lightGray
+                    item?.labelItem.textColor = UIColor.init(netHex: 0xe9e9e9)
                     item?.iconImage.isHighlighted = false
                 }
             }),
@@ -886,11 +888,13 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
                 
                 if enable {
                     
-                    item?.labelItem.textColor = UIColor.darkGray
+                    item?.labelItem.textColor = UIColor.init(netHex: 0x2a2a2a)
+                    
                 }
                 else{
                     
-                    item?.labelItem.textColor = UIColor.lightGray
+                    item?.labelItem.textColor = UIColor.init(netHex: 0xe9e9e9)
+                    
                 }
             }),
             
@@ -905,11 +909,13 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
                 
                 if enable {
                     
-                    item?.labelItem.textColor = UIColor.darkGray
+                    item?.labelItem.textColor = UIColor.init(netHex: 0x2a2a2a)
+                    
                 }
                 else{
                     
-                    item?.labelItem.textColor = UIColor.lightGray
+                    item?.labelItem.textColor = UIColor.init(netHex: 0xe9e9e9)
+                    
                 }
             })
         ]

@@ -164,7 +164,7 @@
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="margin">
-                                                            <real key="value" value="4"/>
+                                                            <real key="value" value="11"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="outterRingWith">
                                                             <real key="value" value="5"/>
