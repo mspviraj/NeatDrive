@@ -150,4 +150,13 @@ static inline CGRect ScaleRect(CGRect rect, float n) {
     return self;
 }
 
+- (ACPItem *)setIconHighlightedImage:(UIImage *)iconHighlightedImage{
+    
+    if (iconHighlightedImage) {
+        self.iconImage.highlightedImage = iconHighlightedImage;
+    }
+    
+    return self;
+}
+
 @end

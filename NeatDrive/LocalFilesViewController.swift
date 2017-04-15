@@ -709,7 +709,7 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
             }),
             
             //rename item
-            ACPItem(acpItem: nil, iconImage: UIImage(named: "EditMenu-Rename"), label: "Rename", andAction: { item in
+            ACPItem(acpItem: nil, iconImage: UIImage(named: "EditMenu-RenameGray"), label: "Rename", andAction: { item in
                 
                 print("Re-name")
                 
@@ -770,15 +770,17 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
                 
                 self.present(renameAlert, animated: true, completion: nil)
                 
-            }).setItemEnable(self.selectedData.count == 1 ? true : false).setEnableDisableAction({ item, enable in
+            }).setIconHighlightedImage(UIImage(named: "EditMenu-Rename")).setItemEnable(self.selectedData.count == 1 ? true : false).setEnableDisableAction({ item, enable in
                 
                 if enable {
                     
                     item?.labelItem.textColor = UIColor.darkGray
+                    item?.iconImage.isHighlighted = true
                 }
                 else{
                     
                     item?.labelItem.textColor = UIColor.lightGray
+                    item?.iconImage.isHighlighted = false
                 }
             }),
             
