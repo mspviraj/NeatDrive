@@ -164,10 +164,10 @@
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="margin">
-                                                            <real key="value" value="11"/>
+                                                            <real key="value" value="10"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="outterRingWith">
-                                                            <real key="value" value="5"/>
+                                                            <real key="value" value="2"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="innerGap">
                                                             <real key="value" value="3"/>
@@ -712,7 +712,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Storage-BG" translatesAutoresizingMaskIntoConstraints="NO" id="Rlb-tz-McO">
-                                <rect key="frame" x="16" y="72" width="343" height="299"/>
+                                <rect key="frame" x="48" y="79" width="279" height="285"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7t-RF-I0b">
                                 <rect key="frame" x="267" y="379" width="31.5" height="20.5"/>
@@ -723,18 +723,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="FZY-o5-Dcx" firstAttribute="top" secondItem="Rlb-tz-McO" secondAttribute="bottom" constant="8" id="3PC-Qo-aOm"/>
+                            <constraint firstItem="FZY-o5-Dcx" firstAttribute="top" secondItem="Rlb-tz-McO" secondAttribute="bottom" constant="15" id="3PC-Qo-aOm"/>
                             <constraint firstItem="akb-eP-he0" firstAttribute="leading" secondItem="Tst-HX-J7e" secondAttribute="trailing" constant="8" id="3xN-NB-5vX"/>
-                            <constraint firstItem="Rlb-tz-McO" firstAttribute="top" secondItem="HWH-a5-oMh" secondAttribute="bottom" constant="8" id="8Gj-L4-T6n"/>
+                            <constraint firstItem="Rlb-tz-McO" firstAttribute="top" secondItem="HWH-a5-oMh" secondAttribute="bottom" constant="15" id="8Gj-L4-T6n"/>
                             <constraint firstItem="g7t-RF-I0b" firstAttribute="trailing" secondItem="2yc-WG-Hfe" secondAttribute="trailing" id="Ad2-r2-Zdn"/>
                             <constraint firstItem="2yc-WG-Hfe" firstAttribute="top" secondItem="sVJ-Tp-QnT" secondAttribute="bottom" constant="8" id="DdM-V7-bld"/>
                             <constraint firstItem="2yc-WG-Hfe" firstAttribute="centerX" secondItem="MTB-BX-BuB" secondAttribute="centerX" id="FJc-dI-c7E"/>
                             <constraint firstItem="2yc-WG-Hfe" firstAttribute="height" secondItem="MTB-BX-BuB" secondAttribute="height" multiplier="1:3" id="Fhe-Mn-ZnO"/>
                             <constraint firstItem="akb-eP-he0" firstAttribute="centerY" secondItem="sVJ-Tp-QnT" secondAttribute="centerY" id="Kcc-0I-fDI"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Rlb-tz-McO" secondAttribute="trailing" id="NWg-Ac-Joi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Rlb-tz-McO" secondAttribute="trailing" constant="32" id="NWg-Ac-Joi"/>
                             <constraint firstItem="akb-eP-he0" firstAttribute="trailing" secondItem="2yc-WG-Hfe" secondAttribute="trailing" id="RI7-cy-DzH"/>
                             <constraint firstItem="Tst-HX-J7e" firstAttribute="centerY" secondItem="sVJ-Tp-QnT" secondAttribute="centerY" id="Uha-Nt-kSI"/>
-                            <constraint firstItem="Rlb-tz-McO" firstAttribute="leading" secondItem="MTB-BX-BuB" secondAttribute="leadingMargin" id="W1U-7Z-Zeu"/>
+                            <constraint firstItem="Rlb-tz-McO" firstAttribute="leading" secondItem="MTB-BX-BuB" secondAttribute="leadingMargin" constant="32" id="W1U-7Z-Zeu"/>
                             <constraint firstItem="btr-CZ-GsI" firstAttribute="top" secondItem="2yc-WG-Hfe" secondAttribute="bottom" constant="8" id="eix-cd-XMS"/>
                             <constraint firstItem="Tst-HX-J7e" firstAttribute="leading" secondItem="sVJ-Tp-QnT" secondAttribute="trailing" constant="7.5" id="igI-F7-0dp"/>
                             <constraint firstItem="f6l-qE-ncM" firstAttribute="centerY" secondItem="FZY-o5-Dcx" secondAttribute="centerY" id="ldf-Ig-7ZN"/>
