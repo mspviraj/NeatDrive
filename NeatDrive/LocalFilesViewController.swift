@@ -636,7 +636,8 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
         
         let arr : [ACPItem] = [
         
-            ACPItem(acpItem: nil, iconImage: nil, label: "Add Folder", andAction: { item in
+            //add folder item
+            ACPItem(acpItem: nil, iconImage: UIImage(named: "EditMenu-AddFolder"), label: "Add Folder", andAction: { item in
                 
                 print("add folder")
                 
@@ -699,15 +700,18 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
                 
                 if enable {
                     
-                    item?.labelItem.textColor = UIColor.darkGray
+                    item?.labelItem.textColor = UIColor.init(netHex: 0x2a2a2a)
+
                 }
                 else{
                     
-                    item?.labelItem.textColor = UIColor.lightGray
+                    item?.labelItem.textColor = UIColor.init(netHex: 0xe9e9e9)
+
                 }
             }),
             
-            ACPItem(acpItem: nil, iconImage: nil, label: "Rename", andAction: { item in
+            //rename item
+            ACPItem(acpItem: nil, iconImage: UIImage(named: "EditMenu-RenameGray"), label: "Rename", andAction: { item in
                 
                 print("Re-name")
                 
@@ -768,19 +772,22 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
                 
                 self.present(renameAlert, animated: true, completion: nil)
                 
-            }).setItemEnable(self.selectedData.count == 1 ? true : false).setEnableDisableAction({ item, enable in
+            }).setIconHighlightedImage(UIImage(named: "EditMenu-Rename")).setItemEnable(self.selectedData.count == 1 ? true : false).setEnableDisableAction({ item, enable in
                 
                 if enable {
                     
-                    item?.labelItem.textColor = UIColor.darkGray
+                    item?.labelItem.textColor = UIColor.init(netHex: 0x2a2a2a)
+                    item?.iconImage.isHighlighted = true
                 }
                 else{
                     
-                    item?.labelItem.textColor = UIColor.lightGray
+                    item?.labelItem.textColor = UIColor.init(netHex: 0xe9e9e9)
+                    item?.iconImage.isHighlighted = false
                 }
             }),
             
-            ACPItem(acpItem: nil, iconImage: nil, label: "Edit", andAction: { item in
+            //edit item
+            ACPItem(acpItem: nil, iconImage: UIImage(named: "EditMenu-EditFile"), label: "Edit", andAction: { item in
                 
                 print("Edit")
                 
@@ -881,15 +888,18 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
                 
                 if enable {
                     
-                    item?.labelItem.textColor = UIColor.darkGray
+                    item?.labelItem.textColor = UIColor.init(netHex: 0x2a2a2a)
+                    
                 }
                 else{
                     
-                    item?.labelItem.textColor = UIColor.lightGray
+                    item?.labelItem.textColor = UIColor.init(netHex: 0xe9e9e9)
+                    
                 }
             }),
             
-            ACPItem(acpItem: nil, iconImage: nil, label: "Cancel Edit", andAction: { item in
+            //cancel edit item
+            ACPItem(acpItem: nil, iconImage: UIImage(named: "EditMenu-CancelEdit"), label: "Cancel Edit", andAction: { item in
                 
                 print("Cancel edit")
                 
@@ -899,11 +909,13 @@ class LocalFilesViewController : SlidableViewController, UITableViewDataSource, 
                 
                 if enable {
                     
-                    item?.labelItem.textColor = UIColor.darkGray
+                    item?.labelItem.textColor = UIColor.init(netHex: 0x2a2a2a)
+                    
                 }
                 else{
                     
-                    item?.labelItem.textColor = UIColor.lightGray
+                    item?.labelItem.textColor = UIColor.init(netHex: 0xe9e9e9)
+                    
                 }
             })
         ]

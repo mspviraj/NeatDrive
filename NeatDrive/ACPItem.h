@@ -72,5 +72,6 @@ typedef enum {
 
 - (ACPItem *)setItemEnable:(BOOL)enable;
 - (ACPItem *)setEnableDisableAction:(enableDisableBlock)block;
+- (ACPItem *)setIconHighlightedImage:(UIImage *)iconHighlightedImage;
 
 @end
